@@ -13,24 +13,38 @@ MonoBehaviour:
   m_Name: BlockData
   m_EditorClassIdentifier: MRTemplate::MRTemplateAssets.Scripts.BlockCatalogData
   allBlocks:
-  - blockName: 2x2 Block
-    blockId: block_2x2
-    prefab: {fileID: 346654792417907792, guid: a50fe9e0591af284984d082f9cd8f2b7, type: 3}
-    icon: {fileID: 7681201850867341242, guid: 215687feeab0b7445b4a1cd86c82c2e1, type: 3}
+  - blockName: Blue Block
+    blockId: blue_block
+    prefab: {fileID: 6854438064677171662, guid: a3f8cbca64bbaad43b9491555088b723, type: 3}
+    icon: {fileID: 21300000, guid: 17d565bb4a7744b41b7e4dc7e3a09e35, type: 3}
+    category: 0
+    defaultScale: {x: 1, y: 1, z: 1}
+    availableColors:
+    - {r: 0, g: 0, b: 1, a: 1}
+    - {r: 0, g: 1, b: 1, a: 1}
+  - blockName: Red Block
+    blockId: red_block
+    prefab: {fileID: 6854438064677171662, guid: a3f8cbca64bbaad43b9491555088b723, type: 3}
+    icon: {fileID: 21300000, guid: 17d565bb4a7744b41b7e4dc7e3a09e35, type: 3}
     category: 0
     defaultScale: {x: 1, y: 1, z: 1}
     availableColors:
     - {r: 1, g: 0, b: 0, a: 1}
-    - {r: 0, g: 1, b: 0, a: 1}
-  - blockName: 4x2 Block
-    blockId: block_4x2
-    prefab: {fileID: 6262048180142788448, guid: 8e5baf0efae3d4c41b8638e16e42e14b, type: 3}
-    icon: {fileID: 2289998852469363648, guid: 215687feeab0b7445b4a1cd86c82c2e1, type: 3}
+  - blockName: Green Block
+    blockId: green_block
+    prefab: {fileID: 6854438064677171662, guid: a3f8cbca64bbaad43b9491555088b723, type: 3}
+    icon: {fileID: 21300000, guid: 17d565bb4a7744b41b7e4dc7e3a09e35, type: 3}
     category: 0
     defaultScale: {x: 1, y: 1, z: 1}
     availableColors:
-    - {r: 1, g: 0, b: 0, a: 1}
     - {r: 0, g: 1, b: 0, a: 1}
+  - blockName: Yellow Block
+    blockId: yellow_block
+    prefab: {fileID: 6854438064677171662, guid: a3f8cbca64bbaad43b9491555088b723, type: 3}
+    icon: {fileID: 21300000, guid: 17d565bb4a7744b41b7e4dc7e3a09e35, type: 3}
+    category: 0
+    defaultScale: {x: 1, y: 1, z: 1}
+    availableColors:
     - {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   defaultColors:
   - {r: 1, g: 0, b: 0, a: 1}
