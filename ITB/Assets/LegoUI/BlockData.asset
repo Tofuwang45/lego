@@ -18,7 +18,7 @@ MonoBehaviour:
     prefab: {fileID: 6854438064677171662, guid: a3f8cbca64bbaad43b9491555088b723, type: 3}
     icon: {fileID: 21300000, guid: 17d565bb4a7744b41b7e4dc7e3a09e35, type: 3}
     category: 0
-    defaultScale: {x: 1, y: 1, z: 1}
+    defaultScale: {x: 0.09, y: 0.09, z: 0.09}
     availableColors:
     - {r: 0, g: 0, b: 1, a: 1}
     - {r: 0, g: 1, b: 1, a: 1}
@@ -27,7 +27,7 @@ MonoBehaviour:
     prefab: {fileID: 6854438064677171662, guid: a3f8cbca64bbaad43b9491555088b723, type: 3}
     icon: {fileID: 21300000, guid: 17d565bb4a7744b41b7e4dc7e3a09e35, type: 3}
     category: 0
-    defaultScale: {x: 1, y: 1, z: 1}
+    defaultScale: {x: 0.09, y: 0.09, z: 0.09}
     availableColors:
     - {r: 1, g: 0, b: 0, a: 1}
   - blockName: Green Block
@@ -35,7 +35,7 @@ MonoBehaviour:
     prefab: {fileID: 6854438064677171662, guid: a3f8cbca64bbaad43b9491555088b723, type: 3}
     icon: {fileID: 21300000, guid: 17d565bb4a7744b41b7e4dc7e3a09e35, type: 3}
     category: 0
-    defaultScale: {x: 1, y: 1, z: 1}
+    defaultScale: {x: 0.09, y: 0.09, z: 0.09}
     availableColors:
     - {r: 0, g: 1, b: 0, a: 1}
   - blockName: Yellow Block
@@ -43,7 +43,7 @@ MonoBehaviour:
     prefab: {fileID: 6854438064677171662, guid: a3f8cbca64bbaad43b9491555088b723, type: 3}
     icon: {fileID: 21300000, guid: 17d565bb4a7744b41b7e4dc7e3a09e35, type: 3}
     category: 0
-    defaultScale: {x: 1, y: 1, z: 1}
+    defaultScale: {x: 0.09, y: 0.09, z: 0.09}
     availableColors:
     - {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   - blockName: Pink Block
@@ -51,7 +51,7 @@ MonoBehaviour:
     prefab: {fileID: 6854438064677171662, guid: a3f8cbca64bbaad43b9491555088b723, type: 3}
     icon: {fileID: 21300000, guid: 17d565bb4a7744b41b7e4dc7e3a09e35, type: 3}
     category: 0
-    defaultScale: {x: 1, y: 1, z: 1}
+    defaultScale: {x: 0.09, y: 0.09, z: 0.09}
     availableColors:
     - {r: 1, g: 0.4117647, b: 0.7058824, a: 1}
   - blockName: Light Red Block
@@ -59,7 +59,7 @@ MonoBehaviour:
     prefab: {fileID: 6854438064677171662, guid: a3f8cbca64bbaad43b9491555088b723, type: 3}
     icon: {fileID: 21300000, guid: 17d565bb4a7744b41b7e4dc7e3a09e35, type: 3}
     category: 0
-    defaultScale: {x: 1, y: 1, z: 1}
+    defaultScale: {x: 0.09, y: 0.09, z: 0.09}
     availableColors:
     - {r: 1, g: 0.3882353, b: 0.2784314, a: 1}
   defaultColors:
