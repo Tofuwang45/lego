@@ -714,7 +714,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb1c845a8139c714f803cd1babcb3e31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::APICallInstruction
-  apiEndpoint: https://api.openai.com/v1/chat/completions
+  apiEndpoint: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent
   systemPrompt: You are a helpful assistant tasked with decoding a set of actions
     into insturctions. Given a set of actions detailing what parts are connected
     to what, you will detail how to assemble the parts step by step. For example,
