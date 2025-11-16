@@ -290,6 +290,10 @@ namespace MRTemplateAssets.Scripts
             // Spawn the actual block
             GameObject spawnedBlock = Instantiate(blockData.prefab);
             Debug.Log($"[BlockButton] Block instantiated: {spawnedBlock.name}");
+            
+            // Set the block name to match the Block ID (Unity will auto-add (1), (2), etc. for duplicates)
+            spawnedBlock.name = blockData.blockId;
+            Debug.Log($"[BlockButton] Block renamed to: {spawnedBlock.name}");
 
             // Position it at the ghost location or fallback position
             Vector3 spawnPosition = lastHitPosition;
