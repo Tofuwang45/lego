@@ -123,37 +123,31 @@ namespace MRTemplateAssets.Scripts
 
         private Transform FindLeftHandController()
         {
-            // Try to find the left hand controller in the XR Origin hierarchy
-            var xrOrigin = FindObjectOfType<UnityEngine.XR.Interaction.Toolkit.XROrigin>();
-            if (xrOrigin != null)
+            // Search for any controller with "Left" in the name
+            var controllers = FindObjectsByType<UnityEngine.XR.Interaction.Toolkit.XRController>(FindObjectsSortMode.None);
+            foreach (var controller in controllers)
             {
-                // Look for common naming patterns
-                Transform leftHand = xrOrigin.transform.Find("Camera Offset/LeftHand Controller");
-                if (leftHand == null)
+                if (controller.name.Contains("Left"))
                 {
-                    leftHand = xrOrigin.transform.Find("Camera Offset/Left Hand");
+                    return controller.transform;
                 }
-                if (leftHand == null)
+            }
+
+            // If no controller found, try to find any object with "LeftHand" in the hierarchy
+            GameObject[] allObjects = UnityEngine.Object.FindObjectsByType<GameObject>(FindObjectsSortMode.None);
+            foreach (var obj in allObjects)
+            {
+                if (obj.name.Contains("LeftHand") || obj.name.Contains("Left Hand"))
                 {
-                    // Search for any controller with "Left" in the name
-                    var controllers = xrOrigin.GetComponentsInChildren<XRController>();
-                    foreach (var controller in controllers)
-                    {
-                        if (controller.name.Contains("Left"))
-                        {
-                            leftHand = controller.transform;
-                            break;
-                        }
-                    }
+                    return obj.transform;
                 }
-                return leftHand;
             }
             return null;
         }
 
         private UnityEngine.XR.Interaction.Toolkit.Interactors.XRRayInteractor FindRightHandRayInteractor()
         {
-            var rayInteractors = FindObjectsOfType<UnityEngine.XR.Interaction.Toolkit.Interactors.XRRayInteractor>();
+            var rayInteractors = FindObjectsByType<UnityEngine.XR.Interaction.Toolkit.Interactors.XRRayInteractor>(FindObjectsSortMode.None);
             foreach (var interactor in rayInteractors)
             {
                 if (interactor.name.Contains("Right"))

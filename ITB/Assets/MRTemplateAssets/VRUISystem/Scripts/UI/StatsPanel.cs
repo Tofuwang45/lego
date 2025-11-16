@@ -43,7 +43,6 @@ namespace MRTemplateAssets.Scripts
         private bool isExpanded = false;
         private List<GameObject> statLines = new List<GameObject>();
         private Canvas canvas;
-        private LazyFollow lazyFollow;
 
         public void Initialize()
         {
@@ -57,20 +56,8 @@ namespace MRTemplateAssets.Scripts
             canvas.renderMode = RenderMode.WorldSpace;
             transform.localScale = new Vector3(0.001f, 0.001f, 0.001f);
 
-            // Setup lazy follow if enabled
-            if (useLazyFollow)
-            {
-                lazyFollow = gameObject.GetComponent<LazyFollow>();
-                if (lazyFollow == null)
-                {
-                    lazyFollow = gameObject.AddComponent<LazyFollow>();
-                }
-            }
-            else
-            {
-                // Position panel at fixed location
-                transform.position = panelPosition;
-            }
+            // Always position panel at fixed location
+            transform.position = panelPosition;
 
             // Setup expand button
             if (expandButton != null)
