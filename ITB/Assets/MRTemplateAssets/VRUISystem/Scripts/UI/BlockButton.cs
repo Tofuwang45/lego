@@ -303,29 +303,46 @@ namespace MRTemplateAssets.Scripts
             Debug.Log($"[BlockButton] Block renamed to: {spawnedBlock.name}");
 
             // Position it at the ghost location or fallback position
-            Vector3 spawnPosition = lastHitPosition;
-            Quaternion spawnRotation = Quaternion.LookRotation(lastHitNormal);
+            Vector3 spawnPosition;
+            Quaternion spawnRotation;
             
             if (ghostPreview != null)
             {
+                // Use ghost position and rotation
                 spawnPosition = ghostPreview.transform.position;
-                // Add height offset to spawn position
-                spawnPosition += Vector3.up * spawnHeightOffset;
                 spawnRotation = ghostPreview.transform.rotation;
-                Debug.Log($"[BlockButton] Using ghost position with height offset: {spawnPosition}");
+                Debug.Log($"[BlockButton] Using ghost position: {spawnPosition}");
             }
             else
             {
-                // Fallback: spawn in front of camera with offset
-                Camera mainCam = Camera.main;
-                if (mainCam != null)
+                // Use last hit position or fallback to camera
+                if (lastHitPosition != Vector3.zero)
                 {
-                    spawnPosition = mainCam.transform.position 
-                        + mainCam.transform.forward * spawnForwardDistance
-                        + Vector3.up * spawnHeightOffset;
-                    Debug.LogWarning($"[BlockButton] No ghost preview, spawning in front of camera at: {spawnPosition}");
+                    spawnPosition = lastHitPosition + lastHitNormal * ghostDistance;
+                    spawnRotation = Quaternion.LookRotation(lastHitNormal);
+                    Debug.Log($"[BlockButton] Using last hit position: {spawnPosition}");
+                }
+                else
+                {
+                    // Fallback: spawn in front of camera
+                    Camera mainCam = Camera.main;
+                    if (mainCam != null)
+                    {
+                        spawnPosition = mainCam.transform.position + mainCam.transform.forward * spawnForwardDistance;
+                        spawnRotation = mainCam.transform.rotation;
+                        Debug.LogWarning($"[BlockButton] No ghost or hit position, spawning in front of camera at: {spawnPosition}");
+                    }
+                    else
+                    {
+                        spawnPosition = Vector3.zero;
+                        spawnRotation = Quaternion.identity;
+                        Debug.LogError($"[BlockButton] No camera found, spawning at origin");
+                    }
                 }
             }
+            
+            // Apply height offset to final spawn position (regardless of source)
+            spawnPosition += Vector3.up * spawnHeightOffset;
             
             spawnedBlock.transform.position = spawnPosition;
             spawnedBlock.transform.rotation = spawnRotation;
