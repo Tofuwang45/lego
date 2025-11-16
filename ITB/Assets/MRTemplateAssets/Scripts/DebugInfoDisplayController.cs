@@ -138,7 +138,26 @@ namespace UnityEngine.XR.Templates.MR
 
         void OnDestroy()
         {
-            Destroy(m_DebugLabelValues.gameObject);
+            if (m_DebugLabelValues != null)
+            {
+                Destroy(m_DebugLabelValues.gameObject);
+                m_DebugLabelValues = null;
+            }
+
+            if (m_DebugLabelTypes != null)
+            {
+                Destroy(m_DebugLabelTypes.gameObject);
+                m_DebugLabelTypes = null;
+            }
+
+            m_BackgroundRT = null;
+            m_DebugLabelOffsetRT = null;
+            m_Icon = null;
+            m_Canvas = null;
+            m_MainCamera = null;
+            m_MainCameraTransform = null;
+            m_MainCameraRT = null;
+            m_CanvasTransform = null;
         }
 
         void FormatDebugText(string dataType, string value)

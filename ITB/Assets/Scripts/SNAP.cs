@@ -35,6 +35,11 @@ public class LegoSnapPerfect : MonoBehaviour
         {
             sockets = FindChildrenByName("socket");
         }
+
+        if (LegoSceneTracker.Instance != null)
+        {
+            LegoSceneTracker.Instance.RegisterSnapBrick(this);
+        }
     }
     
     void Update()
@@ -47,7 +52,7 @@ public class LegoSnapPerfect : MonoBehaviour
     
     void TrySnap()
     {
-        LegoSnapPerfect[] allBricks = FindObjectsOfType<LegoSnapPerfect>();
+        LegoSnapPerfect[] allBricks = FindObjectsByType<LegoSnapPerfect>(FindObjectsSortMode.None);
         Transform bestSocket = null;
         Transform bestStud = null;
         float closestDistance = snapDistance;
@@ -127,6 +132,11 @@ public class LegoSnapPerfect : MonoBehaviour
             audioSource.PlayOneShot(snapSound);
         }
         
+        if (LegoSceneTracker.Instance != null)
+        {
+            LegoSceneTracker.Instance.CaptureSnapshot("SnapPerfect:Snap");
+        }
+
         Debug.Log($"{gameObject.name} snapped perfectly to {targetBrick.name}");
     }
     
@@ -145,6 +155,11 @@ public class LegoSnapPerfect : MonoBehaviour
         
         isSnapped = false;
         snappedToStud = null;
+
+        if (LegoSceneTracker.Instance != null)
+        {
+            LegoSceneTracker.Instance.CaptureSnapshot("SnapPerfect:Unsnap");
+        }
     }
     
     Transform[] FindChildrenByName(string namePattern)
@@ -199,6 +214,14 @@ public class LegoSnapPerfect : MonoBehaviour
                     Gizmos.DrawWireSphere(socket.position, snapDistance);
                 }
             }
+        }
+    }
+
+    void OnDestroy()
+    {
+        if (LegoSceneTracker.Instance != null)
+        {
+            LegoSceneTracker.Instance.UnregisterSnapBrick(this);
         }
     }
 }
