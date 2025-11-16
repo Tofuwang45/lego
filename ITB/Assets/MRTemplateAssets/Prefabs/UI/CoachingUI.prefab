@@ -233,7 +233,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: b319a2e4ff8f5d840b82d8635b645d22, type: 3}
+  m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: b319a2e4ff8f5d840b82d8635b645d22, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -379,8 +379,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PokeFollowTransform: {fileID: 3915532937309682008}
   m_PokeFill: {fileID: 6730147006182183956}
-  m_PokeFillMaxSizeX: 252
-  m_PokeFillMaxSizeY: 252
   m_SmoothingSpeed: 8
   m_ReturnToInitialPosition: 1
   m_ApplyIfChildIsTarget: 1
@@ -622,7 +620,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: d14b106713a74b448bcab90869f1706e, type: 3}
+  m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: d14b106713a74b448bcab90869f1706e, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -865,7 +863,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: d14b106713a74b448bcab90869f1706e, type: 3}
+  m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: d14b106713a74b448bcab90869f1706e, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -1069,7 +1067,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 150, y: -126.095}
-  m_SizeDelta: {x: 252, y: 0}
+  m_SizeDelta: {x: 252, y: 116.19}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1164138318660326075
 CanvasRenderer:
@@ -1575,7 +1573,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 150, y: -285.64502}
-  m_SizeDelta: {x: 252, y: 0}
+  m_SizeDelta: {x: 252, y: 154.91}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4386716656928837666
 CanvasRenderer:
@@ -2351,7 +2349,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: d14b106713a74b448bcab90869f1706e, type: 3}
+  m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: d14b106713a74b448bcab90869f1706e, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -2569,7 +2567,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 150, y: -28}
-  m_SizeDelta: {x: 0, y: 8}
+  m_SizeDelta: {x: 53, y: 8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &3032334163513271985
 MonoBehaviour:
@@ -2644,9 +2642,9 @@ RectTransform:
   - {fileID: 3032334163844106277}
   m_Father: {fileID: 3032334163513271987}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 4, y: -4}
   m_SizeDelta: {x: 8, y: 8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3032334163546225033
@@ -3185,7 +3183,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: b319a2e4ff8f5d840b82d8635b645d22, type: 3}
+  m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: b319a2e4ff8f5d840b82d8635b645d22, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -3331,8 +3329,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PokeFollowTransform: {fileID: 3032334163481419982}
   m_PokeFill: {fileID: 3032334164267043829}
-  m_PokeFillMaxSizeX: 150
-  m_PokeFillMaxSizeY: 150
   m_SmoothingSpeed: 8
   m_ReturnToInitialPosition: 1
   m_ApplyIfChildIsTarget: 1
@@ -3829,9 +3825,9 @@ RectTransform:
   - {fileID: 3032334164290373628}
   m_Father: {fileID: 3032334163513271987}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 19, y: -4}
   m_SizeDelta: {x: 8, y: 8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3032334164617457815
@@ -3963,7 +3959,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3032334164665928404
 Transform:
   m_ObjectHideFlags: 0
@@ -4236,7 +4232,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: b319a2e4ff8f5d840b82d8635b645d22, type: 3}
+  m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: b319a2e4ff8f5d840b82d8635b645d22, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -4382,8 +4378,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PokeFollowTransform: {fileID: 3032334164725456221}
   m_PokeFill: {fileID: 3032334164994684794}
-  m_PokeFillMaxSizeX: 150
-  m_PokeFillMaxSizeY: 150
   m_SmoothingSpeed: 8
   m_ReturnToInitialPosition: 1
   m_ApplyIfChildIsTarget: 1
@@ -4536,7 +4530,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 300, y: 0}
+  m_SizeDelta: {x: 300, y: 440}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &3032334164805062090
 Canvas:
@@ -4744,7 +4738,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: d14b106713a74b448bcab90869f1706e, type: 3}
+  m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: d14b106713a74b448bcab90869f1706e, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -4939,9 +4933,9 @@ RectTransform:
   - {fileID: 3032334164617262556}
   m_Father: {fileID: 3032334163513271987}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 49, y: -4}
   m_SizeDelta: {x: 8, y: 8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3032334165323980794
@@ -5166,9 +5160,9 @@ RectTransform:
   - {fileID: 3032334164501148963}
   m_Father: {fileID: 3032334163513271987}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 34, y: -4}
   m_SizeDelta: {x: 8, y: 8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3032334165368480680
@@ -7099,9 +7093,9 @@ RectTransform:
   - {fileID: 3032334163513271987}
   m_Father: {fileID: 3032334164805062089}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 150, y: -220}
   m_SizeDelta: {x: 300, y: 440}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &7199036197561249794
@@ -7403,6 +7397,8 @@ SpriteRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -7424,6 +7420,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
@@ -8030,6 +8027,8 @@ SpriteRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -8051,6 +8050,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
@@ -9002,7 +9002,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: b319a2e4ff8f5d840b82d8635b645d22, type: 3}
+  m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: b319a2e4ff8f5d840b82d8635b645d22, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -9148,8 +9148,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PokeFollowTransform: {fileID: 3761234415152793697}
   m_PokeFill: {fileID: 7747416992934544046}
-  m_PokeFillMaxSizeX: 272
-  m_PokeFillMaxSizeY: 272
   m_SmoothingSpeed: 8
   m_ReturnToInitialPosition: 1
   m_ApplyIfChildIsTarget: 1
