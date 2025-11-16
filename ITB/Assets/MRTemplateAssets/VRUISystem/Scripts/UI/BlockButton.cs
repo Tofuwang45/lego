@@ -29,7 +29,7 @@ namespace MRTemplateAssets.Scripts
 
         [Header("Spawn Position Offset")]
         [Tooltip("How high above the hit point to spawn blocks")]
-        public float spawnHeightOffset = 0.5f;
+        public float spawnHeightOffset = 2f;
 
         [Tooltip("How far in front of the camera to spawn blocks")]
         public float spawnForwardDistance = 2f;
