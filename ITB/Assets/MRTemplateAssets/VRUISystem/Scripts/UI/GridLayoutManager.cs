@@ -26,13 +26,15 @@ namespace MRTemplateAssets.Scripts
 
         private BlockCatalogData catalogData;
         private XRRayInteractor rayInteractor;
+        private NearFarInteractor nearFarInteractor;
         private List<BlockButton> currentButtons = new List<BlockButton>();
         private BlockCategory currentCategory;
 
-        public void Initialize(BlockCatalogData catalog, XRRayInteractor interactor)
+        public void Initialize(BlockCatalogData catalog, XRRayInteractor rayInt = null, NearFarInteractor nearFarInt = null)
         {
             catalogData = catalog;
-            rayInteractor = interactor;
+            rayInteractor = rayInt;
+            nearFarInteractor = nearFarInt;
 
             // Ensure grid layout group is configured
             var gridLayout = gridContainer.GetComponent<GridLayoutGroup>();
@@ -80,7 +82,7 @@ namespace MRTemplateAssets.Scripts
 
             if (blockButton != null)
             {
-                blockButton.Initialize(blockData, rayInteractor);
+                blockButton.Initialize(blockData, rayInteractor, nearFarInteractor);
                 currentButtons.Add(blockButton);
             }
         }

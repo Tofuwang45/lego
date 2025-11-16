@@ -32,8 +32,11 @@ namespace MRTemplateAssets.Scripts
         public GameObject statsPanelPrefab;
 
         [Header("Interaction")]
-        [Tooltip("Right hand ray interactor for UI interaction")]
+        [Tooltip("Right hand interactor for UI interaction (XRRayInteractor or NearFarInteractor)")]
         public XRRayInteractor rightHandRayInteractor;
+
+        [Tooltip("Right hand Near-Far interactor (alternative to Ray Interactor)")]
+        public NearFarInteractor rightHandNearFarInteractor;
 
         private Canvas canvas;
         private StatsPanel statsPanel;
@@ -60,10 +63,10 @@ namespace MRTemplateAssets.Scripts
                 leftHandController = FindLeftHandController();
             }
 
-            // Auto-find right hand ray interactor if not assigned
-            if (rightHandRayInteractor == null)
+            // Auto-find right hand interactor if not assigned
+            if (rightHandRayInteractor == null && rightHandNearFarInteractor == null)
             {
-                rightHandRayInteractor = FindRightHandRayInteractor();
+                FindRightHandInteractor();
             }
 
             // Attach to hand
@@ -85,12 +88,12 @@ namespace MRTemplateAssets.Scripts
 
             if (gridManager != null)
             {
-                gridManager.Initialize(blockCatalog, rightHandRayInteractor);
+                gridManager.Initialize(blockCatalog, rightHandRayInteractor, rightHandNearFarInteractor);
             }
 
             if (recentsManager != null)
             {
-                recentsManager.Initialize(blockCatalog);
+                recentsManager.Initialize(blockCatalog, rightHandRayInteractor, rightHandNearFarInteractor);
             }
 
             // Create stats panel if prefab is assigned
@@ -156,17 +159,33 @@ namespace MRTemplateAssets.Scripts
             return null;
         }
 
-        private XRRayInteractor FindRightHandRayInteractor()
+        private void FindRightHandInteractor()
         {
+            // Try to find NearFarInteractor first (modern approach)
+            var nearFarInteractors = FindObjectsByType<NearFarInteractor>(FindObjectsSortMode.None);
+            foreach (var interactor in nearFarInteractors)
+            {
+                if (interactor.name.Contains("Right"))
+                {
+                    rightHandNearFarInteractor = interactor;
+                    Debug.Log("ForearmSlateUI: Found NearFarInteractor on right hand");
+                    return;
+                }
+            }
+
+            // Fallback to XRRayInteractor (legacy approach)
             var rayInteractors = FindObjectsByType<XRRayInteractor>(FindObjectsSortMode.None);
             foreach (var interactor in rayInteractors)
             {
                 if (interactor.name.Contains("Right"))
                 {
-                    return interactor;
+                    rightHandRayInteractor = interactor;
+                    Debug.Log("ForearmSlateUI: Found XRRayInteractor on right hand");
+                    return;
                 }
             }
-            return null;
+
+            Debug.LogWarning("ForearmSlateUI: Could not find right hand interactor (NearFarInteractor or XRRayInteractor)");
         }
 
         private void OnTabChanged(BlockCategory category)

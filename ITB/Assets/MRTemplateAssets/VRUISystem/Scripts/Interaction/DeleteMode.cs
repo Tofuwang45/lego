@@ -13,8 +13,11 @@ namespace MRTemplateAssets.Scripts
         [Tooltip("Toggle button for delete mode")]
         public Toggle deleteModeToggle;
 
-        [Tooltip("Right hand ray interactor")]
+        [Tooltip("Right hand ray interactor (XRRayInteractor or NearFarInteractor)")]
         public XRRayInteractor rayInteractor;
+
+        [Tooltip("Right hand Near-Far interactor (alternative to Ray Interactor)")]
+        public NearFarInteractor nearFarInteractor;
 
         [Header("Visual Feedback")]
         [Tooltip("Color of the ray when in delete mode")]
@@ -106,26 +109,50 @@ namespace MRTemplateAssets.Scripts
 
         private void HighlightObjectUnderRay()
         {
-            if (rayInteractor == null) return;
-
-            RaycastHit hit;
-            Ray ray = new Ray(rayInteractor.transform.position, rayInteractor.transform.forward);
-
-            if (Physics.Raycast(ray, out hit, maxDeleteDistance, deletableLayerMask))
+            // Try NearFarInteractor first
+            if (nearFarInteractor != null)
             {
-                GameObject hitObject = hit.collider.gameObject;
+                RaycastHit hit;
+                Ray ray = new Ray(nearFarInteractor.transform.position, nearFarInteractor.transform.forward);
 
-                // Check if this is a new object to highlight
-                if (highlightedObject != hitObject)
+                if (Physics.Raycast(ray, out hit, maxDeleteDistance, deletableLayerMask))
+                {
+                    ProcessHighlight(hit);
+                }
+                else
                 {
                     ClearHighlight();
-                    highlightedObject = hitObject;
-                    ApplyHighlight();
+                }
+                return;
+            }
+
+            // Fallback to XRRayInteractor
+            if (rayInteractor != null)
+            {
+                RaycastHit hit;
+                Ray ray = new Ray(rayInteractor.transform.position, rayInteractor.transform.forward);
+
+                if (Physics.Raycast(ray, out hit, maxDeleteDistance, deletableLayerMask))
+                {
+                    ProcessHighlight(hit);
+                }
+                else
+                {
+                    ClearHighlight();
                 }
             }
-            else
+        }
+
+        private void ProcessHighlight(RaycastHit hit)
+        {
+            GameObject hitObject = hit.collider.gameObject;
+
+            // Check if this is a new object to highlight
+            if (highlightedObject != hitObject)
             {
                 ClearHighlight();
+                highlightedObject = hitObject;
+                ApplyHighlight();
             }
         }
 
@@ -159,12 +186,20 @@ namespace MRTemplateAssets.Scripts
         private bool IsDeleteInputPressed()
         {
             // Check for trigger press using XR Interaction Toolkit's input system
+            // Try NearFarInteractor first
+            if (nearFarInteractor != null)
+            {
+                float selectValue = nearFarInteractor.selectInput.ReadValue();
+                return selectValue > 0.5f;
+            }
+
+            // Fallback to XRRayInteractor
             if (rayInteractor != null)
             {
-                // Check if the select input (trigger) is pressed
                 float selectValue = rayInteractor.selectInput.ReadValue();
                 return selectValue > 0.5f;
             }
+
             return false;
         }
 

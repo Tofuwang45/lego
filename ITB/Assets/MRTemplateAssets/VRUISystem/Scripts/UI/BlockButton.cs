@@ -29,6 +29,7 @@ namespace MRTemplateAssets.Scripts
 
         private BlockData blockData;
         private XRRayInteractor rayInteractor;
+        private NearFarInteractor nearFarInteractor;
         private GameObject ghostPreview;
         private Color selectedColor = Color.red;
         private bool isHovering = false;
@@ -36,10 +37,11 @@ namespace MRTemplateAssets.Scripts
         /// <summary>
         /// Initialize the button with block data
         /// </summary>
-        public void Initialize(BlockData data, XRRayInteractor interactor)
+        public void Initialize(BlockData data, XRRayInteractor rayInt = null, NearFarInteractor nearFarInt = null)
         {
             blockData = data;
-            rayInteractor = interactor;
+            rayInteractor = rayInt;
+            nearFarInteractor = nearFarInt;
 
             // Set up UI
             if (iconImage != null && data.icon != null)
@@ -179,22 +181,43 @@ namespace MRTemplateAssets.Scripts
 
         private void UpdateGhostPosition()
         {
-            if (rayInteractor == null || ghostPreview == null) return;
+            if (ghostPreview == null) return;
 
-            // Get the ray hit information
-            RaycastHit hit;
-            if (rayInteractor.TryGetCurrent3DRaycastHit(out hit))
+            // Try with NearFarInteractor first
+            if (nearFarInteractor != null)
             {
-                // Position ghost at ray hit point
-                ghostPreview.transform.position = hit.point + hit.normal * ghostDistance;
-                ghostPreview.transform.rotation = Quaternion.LookRotation(hit.normal);
+                RaycastHit hit;
+                if (nearFarInteractor.TryGetCurrent3DRaycastHit(out hit))
+                {
+                    ghostPreview.transform.position = hit.point + hit.normal * ghostDistance;
+                    ghostPreview.transform.rotation = Quaternion.LookRotation(hit.normal);
+                    return;
+                }
+                else
+                {
+                    // Position along forward direction at fixed distance
+                    ghostPreview.transform.position = nearFarInteractor.transform.position +
+                                                      nearFarInteractor.transform.forward * 1.0f;
+                    ghostPreview.transform.rotation = nearFarInteractor.transform.rotation;
+                    return;
+                }
             }
-            else
+
+            // Fallback to XRRayInteractor
+            if (rayInteractor != null)
             {
-                // Position ghost along the ray at a fixed distance
-                Ray ray = new Ray(rayInteractor.transform.position, rayInteractor.transform.forward);
-                ghostPreview.transform.position = ray.GetPoint(1.0f);
-                ghostPreview.transform.rotation = rayInteractor.transform.rotation;
+                RaycastHit hit;
+                if (rayInteractor.TryGetCurrent3DRaycastHit(out hit))
+                {
+                    ghostPreview.transform.position = hit.point + hit.normal * ghostDistance;
+                    ghostPreview.transform.rotation = Quaternion.LookRotation(hit.normal);
+                }
+                else
+                {
+                    Ray ray = new Ray(rayInteractor.transform.position, rayInteractor.transform.forward);
+                    ghostPreview.transform.position = ray.GetPoint(1.0f);
+                    ghostPreview.transform.rotation = rayInteractor.transform.rotation;
+                }
             }
         }
 
@@ -227,6 +250,14 @@ namespace MRTemplateAssets.Scripts
             {
                 spawnedBlock.transform.position = ghostPreview.transform.position;
                 spawnedBlock.transform.rotation = ghostPreview.transform.rotation;
+            }
+            else if (nearFarInteractor != null)
+            {
+                RaycastHit hit;
+                if (nearFarInteractor.TryGetCurrent3DRaycastHit(out hit))
+                {
+                    spawnedBlock.transform.position = hit.point;
+                }
             }
             else if (rayInteractor != null)
             {
