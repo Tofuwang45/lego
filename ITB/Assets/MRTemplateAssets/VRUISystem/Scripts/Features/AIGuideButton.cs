@@ -104,7 +104,7 @@ namespace MRTemplateAssets.Scripts
             }
 
             // Get spawned objects information
-            var spawnedObjectsManager = FindObjectOfType<SpawnedObjectsManager>();
+            var spawnedObjectsManager = FindFirstObjectByType<SpawnedObjectsManager>();
             int objectCount = spawnedObjectsManager != null ? spawnedObjectsManager.gameObject.transform.childCount : 0;
             context += $"\nNumber of objects in scene: {objectCount}\n";
 

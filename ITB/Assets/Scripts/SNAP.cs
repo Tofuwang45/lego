@@ -46,7 +46,7 @@ public class LegoSnapSystem : MonoBehaviour
     
     void TrySnap()
     {
-        LegoSnapSystem[] allBricks = FindObjectsOfType<LegoSnapSystem>();
+        LegoSnapSystem[] allBricks = FindObjectsByType<LegoSnapSystem>(FindObjectsSortMode.None);
         Transform bestSocket = null;
         Transform bestStud = null;
         float closestDistance = snapDistance;
