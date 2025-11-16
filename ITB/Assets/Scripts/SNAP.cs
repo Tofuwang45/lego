@@ -61,7 +61,7 @@ public class LegoSnapPerfect : MonoBehaviour
         {
             foreach (var otherBrick in allBricks)
             {
-                if (otherBrick == this || otherBrick.isSnapped) continue;
+                if (otherBrick == this) continue;
                 
                 foreach (var stud in otherBrick.studs)
                 {
