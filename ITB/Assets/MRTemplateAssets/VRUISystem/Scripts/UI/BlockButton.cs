@@ -27,6 +27,13 @@ namespace MRTemplateAssets.Scripts
         [Tooltip("Distance from ray hit point to show ghost")]
         public float ghostDistance = 0.3f;
 
+        [Header("Spawn Position Offset")]
+        [Tooltip("How high above the hit point to spawn blocks")]
+        public float spawnHeightOffset = 0.5f;
+
+        [Tooltip("How far in front of the camera to spawn blocks")]
+        public float spawnForwardDistance = 2f;
+
         private BlockData blockData;
         private GameObject ghostPreview;
         private Color selectedColor = Color.red;
@@ -302,16 +309,20 @@ namespace MRTemplateAssets.Scripts
             if (ghostPreview != null)
             {
                 spawnPosition = ghostPreview.transform.position;
+                // Add height offset to spawn position
+                spawnPosition += Vector3.up * spawnHeightOffset;
                 spawnRotation = ghostPreview.transform.rotation;
-                Debug.Log($"[BlockButton] Using ghost position: {spawnPosition}");
+                Debug.Log($"[BlockButton] Using ghost position with height offset: {spawnPosition}");
             }
             else
             {
-                // Fallback: spawn in front of camera
+                // Fallback: spawn in front of camera with offset
                 Camera mainCam = Camera.main;
                 if (mainCam != null)
                 {
-                    spawnPosition = mainCam.transform.position + mainCam.transform.forward * 2f;
+                    spawnPosition = mainCam.transform.position 
+                        + mainCam.transform.forward * spawnForwardDistance
+                        + Vector3.up * spawnHeightOffset;
                     Debug.LogWarning($"[BlockButton] No ghost preview, spawning in front of camera at: {spawnPosition}");
                 }
             }
