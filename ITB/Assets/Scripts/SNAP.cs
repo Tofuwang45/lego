@@ -83,36 +83,58 @@ public class LegoSnapSystem : MonoBehaviour
         }
     }
     
-    void SnapTo(Transform socket, Transform stud)
+void SnapTo(Transform socket, Transform stud)
+{
+    // Find which socket is being used
+    int socketIndex = System.Array.IndexOf(sockets, socket);
+    
+    // Calculate the offset between our socket and their stud
+    Vector3 socketToStud = stud.position - socket.position;
+    
+    // Move the entire brick by this offset
+    transform.position += socketToStud;
+    
+    // Align rotation to match the other brick (both should be on same grid)
+    Vector3 targetRotation = stud.GetComponentInParent<LegoSnapSystem>().transform.eulerAngles;
+    Vector3 euler = transform.eulerAngles;
+    
+    // Snap to nearest 90-degree increment matching the target brick
+    euler.y = Mathf.Round(targetRotation.y / 90f) * 90f;
+    transform.eulerAngles = euler;
+    
+    // Fine-tune: Snap to grid for perfect alignment
+    float gridSize = 0.008f; // Standard LEGO unit
+    Vector3 pos = transform.position;
+    pos.x = Mathf.Round(pos.x / gridSize) * gridSize;
+    pos.y = Mathf.Round(pos.y / gridSize) * gridSize;
+    pos.z = Mathf.Round(pos.z / gridSize) * gridSize;
+    transform.position = pos;
+    
+    // Stop all movement
+    if (rb != null)
     {
-        // Calculate the offset we need to move
-        Vector3 offset = socket.position - stud.position;
-        
-        // Move the brick
-        transform.position -= offset;
-        
-        // Align rotation to grid (90-degree increments)
-        Vector3 euler = transform.eulerAngles;
-        euler.y = Mathf.Round(euler.y / 90f) * 90f;
-        transform.eulerAngles = euler;
-        
-        // Create physical connection
-        if (snapJoint == null)
-        {
-            snapJoint = gameObject.AddComponent<FixedJoint>();
-            snapJoint.connectedBody = stud.GetComponentInParent<Rigidbody>();
-        }
-        
-        isSnapped = true;
-        
-        // Play sound
-        if (audioSource != null && snapSound != null)
-        {
-            audioSource.PlayOneShot(snapSound);
-        }
-        
-        Debug.Log($"{gameObject.name} snapped to {stud.parent.name}");
+        rb.linearVelocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
+        rb.isKinematic = true; // Lock it completely
     }
+    
+    // Create physical connection
+    if (snapJoint == null)
+    {
+        snapJoint = gameObject.AddComponent<FixedJoint>();
+        snapJoint.connectedBody = stud.GetComponentInParent<Rigidbody>();
+        snapJoint.breakForce = Mathf.Infinity;
+    }
+    
+    isSnapped = true;
+    
+    if (audioSource != null && snapSound != null)
+    {
+        audioSource.PlayOneShot(snapSound);
+    }
+    
+    Debug.Log($"{gameObject.name} snapped to {stud.parent.name}");
+}
     
     // Helper function to find children by name pattern
     Transform[] FindChildrenByName(string namePattern)

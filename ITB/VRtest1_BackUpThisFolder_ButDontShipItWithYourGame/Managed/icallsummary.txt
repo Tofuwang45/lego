@@ -864,6 +864,7 @@ UnityEngine.Jobs.TransformAccessArray::GetTransform_Injected
 UnityEngine.Jobs.TransformAccessArray::Add_Injected
 UnityEngine.Jobs.TransformAccessArray::DestroyTransformAccessArray
 UnityEngine.Jobs.TransformAccessArray::RemoveAtSwapBack
+UnityEngine.Joint::set_breakForce_Injected
 UnityEngine.Joint::set_connectedBody_Injected
 UnityEngine.JsonUtility::FromJsonInternal_Injected
 UnityEngine.JsonUtility::ToJsonInternal_Injected

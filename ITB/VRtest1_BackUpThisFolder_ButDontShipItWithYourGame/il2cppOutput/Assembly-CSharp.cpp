@@ -181,7 +181,9 @@ IL2CPP_EXTERN_C String_t* _stringLiteralF2A7404E011BFFC45FDEADF00A94774370EFA343
 IL2CPP_EXTERN_C String_t* _stringLiteralF2D53051A1FC8AFB412916CC43F2AC4BC8EA529C;
 IL2CPP_EXTERN_C String_t* _stringLiteralF311E8E227EA807760545FFEA163CF84063A5427;
 IL2CPP_EXTERN_C String_t* _stringLiteralF496B5F21C328745A1CF3E662B3B4400E16FCFF8;
+IL2CPP_EXTERN_C const RuntimeMethod* Array_IndexOf_TisTransform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1_m74EBADD5099D7B71BCA3A62C3D97ED3158C87A08_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* Component_GetComponentInChildren_TisMeshFilter_t6D1CE2473A1E45AC73013400585A1163BF66B2F5_m6B2F8781CF3919B088A301A35E34503ED503AC11_RuntimeMethod_var;
+IL2CPP_EXTERN_C const RuntimeMethod* Component_GetComponentInParent_TisLegoSnapSystem_tC8AC84D2F0003D236FFA759EC32F0A0077F6FB85_mC00ACB5FC5661A227F492C6F4953CA8358A33F1D_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* Component_GetComponentInParent_TisRigidbody_t268697F5A994213ED97393309870968BC1C7393C_m49365CF93735FBE624C3828C66E7AD5FF67AD40D_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* Component_GetComponent_TisAudioSource_t871AC2272F896738252F04EE949AEF5B241D3299_m42DA4DEA19EB60D80CBED7413ADEB27FA033C77B_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* Component_GetComponent_TisCollider_t1CC3163924FCD6C4CC2E816373A929C1E3D55E76_m820398EDBF1D3766C3166A0C323A127662A29A14_RuntimeMethod_var;
@@ -1386,6 +1388,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UnityAction_1__ctor_m0C2FC6B483B474AE959
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UnityEvent_1_AddListener_m055233246714700E4BDAA62635BC0AA49E8165CC_gshared (UnityEvent_1_t3CE03B42D5873C0C0E0692BEE72E1E6D5399F205* __this, UnityAction_1_t9C30BCD020745BF400CBACF22C6F34ADBA2DDA6A* ___0_call, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UnityEvent_1_RemoveListener_m904FA6BDD0D33FDF8650EF816FF5C131867E693E_gshared (UnityEvent_1_t3CE03B42D5873C0C0E0692BEE72E1E6D5399F205* __this, UnityAction_1_t9C30BCD020745BF400CBACF22C6F34ADBA2DDA6A* ___0_call, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* Object_FindObjectsOfType_TisRuntimeObject_m0B4DF4B8AB4C71E0F471BC9D0440B40844DA221D_gshared (const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Array_IndexOf_TisRuntimeObject_m69589B2C5A44BA495E1A2B1170931D92F9BB6BF1_gshared (ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* ___0_array, RuntimeObject* ___1_value, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* Component_GetComponentInParent_TisRuntimeObject_m6746D6BB99912B1B509746C993906492F86CD119_gshared (Component_t39FBE53E5EFCF4409111FB22C15FF73717632EC3* __this, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* List_1_ToArray_mD7E4F8E7C11C3C67CB5739FCC0A6E86106A6291F_gshared (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D* __this, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void List_1_AddWithResize_mCDB189127FC2EE67B5EED9DE34F837DFC6EDC212_gshared (List_1_t77B94703E05C519A9010DD0614F757F974E1CD8B* __this, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___0_item, const RuntimeMethod* method) ;
@@ -1684,8 +1687,18 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 Vector3_op_UnaryNegation_m5450829F333BD2A88AF9A592C4EE331661225915_inline (Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___0_a, const RuntimeMethod* method) ;
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR float Vector3_Angle_mB16906B482814C140FE5BA9D041D2DC11E42A68D_inline (Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___0_from, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___1_to, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LegoSnapSystem_SnapTo_m28DE84D38A45D2BD0C6575D730CD6B9726752DDC (LegoSnapSystem_tC8AC84D2F0003D236FFA759EC32F0A0077F6FB85* __this, Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___0_socket, Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___1_stud, const RuntimeMethod* method) ;
+inline int32_t Array_IndexOf_TisTransform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1_m74EBADD5099D7B71BCA3A62C3D97ED3158C87A08 (TransformU5BU5D_tBB9C5F5686CAE82E3D97D43DF0F3D68ABF75EC24* ___0_array, Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___1_value, const RuntimeMethod* method)
+{
+	return ((  int32_t (*) (TransformU5BU5D_tBB9C5F5686CAE82E3D97D43DF0F3D68ABF75EC24*, Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1*, const RuntimeMethod*))Array_IndexOf_TisRuntimeObject_m69589B2C5A44BA495E1A2B1170931D92F9BB6BF1_gshared)(___0_array, ___1_value, method);
+}
+inline LegoSnapSystem_tC8AC84D2F0003D236FFA759EC32F0A0077F6FB85* Component_GetComponentInParent_TisLegoSnapSystem_tC8AC84D2F0003D236FFA759EC32F0A0077F6FB85_mC00ACB5FC5661A227F492C6F4953CA8358A33F1D (Component_t39FBE53E5EFCF4409111FB22C15FF73717632EC3* __this, const RuntimeMethod* method)
+{
+	return ((  LegoSnapSystem_tC8AC84D2F0003D236FFA759EC32F0A0077F6FB85* (*) (Component_t39FBE53E5EFCF4409111FB22C15FF73717632EC3*, const RuntimeMethod*))Component_GetComponentInParent_TisRuntimeObject_m6746D6BB99912B1B509746C993906492F86CD119_gshared)(__this, method);
+}
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 Transform_get_eulerAngles_mCAAF48EFCF628F1ED91C2FFE75A4FD19C039DD6A (Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* __this, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Transform_set_eulerAngles_m9F0BC484A7915A51FAB87230644229B75BACA004 (Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* __this, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___0_value, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Rigidbody_set_linearVelocity_m29AE03D5FC079EAD4202FCF72E2AEBDC19363985 (Rigidbody_t268697F5A994213ED97393309870968BC1C7393C* __this, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___0_value, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Rigidbody_set_angularVelocity_m23266B4E52BF0D2E65CC984AC73CC40B8D4A27E0 (Rigidbody_t268697F5A994213ED97393309870968BC1C7393C* __this, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___0_value, const RuntimeMethod* method) ;
 inline FixedJoint_tA10A077292A86BA2A2AB3542E3441610055F806E* GameObject_AddComponent_TisFixedJoint_tA10A077292A86BA2A2AB3542E3441610055F806E_m55087CF9E0B9B9026B0844811592B36880109159 (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* __this, const RuntimeMethod* method)
 {
 	return ((  FixedJoint_tA10A077292A86BA2A2AB3542E3441610055F806E* (*) (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F*, const RuntimeMethod*))GameObject_AddComponent_TisRuntimeObject_m69B93700FACCF372F5753371C6E8FB780800B824_gshared)(__this, method);
@@ -1695,6 +1708,7 @@ inline Rigidbody_t268697F5A994213ED97393309870968BC1C7393C* Component_GetCompone
 	return ((  Rigidbody_t268697F5A994213ED97393309870968BC1C7393C* (*) (Component_t39FBE53E5EFCF4409111FB22C15FF73717632EC3*, const RuntimeMethod*))Component_GetComponentInParent_TisRuntimeObject_m6746D6BB99912B1B509746C993906492F86CD119_gshared)(__this, method);
 }
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Joint_set_connectedBody_mE9E631476E9D4264E8DC0D6307146F5EB64D3ED4 (Joint_tB2C5499F976EBB1EA1C11A80E1BD9F5E2EE4D682* __this, Rigidbody_t268697F5A994213ED97393309870968BC1C7393C* ___0_value, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Joint_set_breakForce_m42F130D31EFC282FE0887A4E6A399F53EB3FB40F (Joint_tB2C5499F976EBB1EA1C11A80E1BD9F5E2EE4D682* __this, float ___0_value, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AudioSource_PlayOneShot_m098BCAE084AABB128BB19ED805D2D985E7B75112 (AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* __this, AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20* ___0_clip, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* Transform_get_parent_m65354E28A4C94EC00EBCF03532F7B0718380791E (Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* __this, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* String_Concat_m8855A6DE10F84DA7F4EC113CADDB59873A25573B (String_t* ___0_str0, String_t* ___1_str1, String_t* ___2_str2, const RuntimeMethod* method) ;
@@ -1756,7 +1770,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Bounds_set_center_m891869DD5
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 108150
+// Method Definition Index: 108152
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Duplicate_OnMouseDown_mA28DE94A6DAC52EE9D34AAC3F228AE56D85C7EBF (Duplicate_tC6CE9C2F8CEF4EE6C56773ECD2F5119055C9AA9F* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1844,7 +1858,7 @@ IL_004d:
 		return;
 	}
 }
-// Method Definition Index: 108151
+// Method Definition Index: 108153
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Duplicate_Start_m16806AEE5980C1524634C0D732DE701F4D99DDAA (Duplicate_tC6CE9C2F8CEF4EE6C56773ECD2F5119055C9AA9F* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1884,7 +1898,7 @@ IL_0023:
 		return;
 	}
 }
-// Method Definition Index: 108152
+// Method Definition Index: 108154
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Duplicate__ctor_mD7AAAB1DEAC05E4B422E60D83F26FB1B8B350278 (Duplicate_tC6CE9C2F8CEF4EE6C56773ECD2F5119055C9AA9F* __this, const RuntimeMethod* method) 
 {
 	{
@@ -1905,7 +1919,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Duplicate__ctor_mD7AAAB1DEAC05E4B422E60D
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 108153
+// Method Definition Index: 108155
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LegoBrick_Awake_mF77200D6451AC76A8FB7AA59C8F2BD9DA7A8A166 (LegoBrick_tE5ABB25DF4A24103654F0463991511F18320BF2C* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1949,7 +1963,7 @@ IL_002b:
 		return;
 	}
 }
-// Method Definition Index: 108154
+// Method Definition Index: 108156
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LegoBrick_Start_m6E5FC53E5565A756753B8EDB2E94122517CBC1D5 (LegoBrick_tE5ABB25DF4A24103654F0463991511F18320BF2C* __this, const RuntimeMethod* method) 
 {
 	{
@@ -1959,7 +1973,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LegoBrick_Start_m6E5FC53E5565A756753B8ED
 		return;
 	}
 }
-// Method Definition Index: 108155
+// Method Definition Index: 108157
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LegoBrick_GenerateSnapPoints_mE5D1971F8D58381B0EE86F1FB6FF74094E50E4A8 (LegoBrick_tE5ABB25DF4A24103654F0463991511F18320BF2C* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2480,7 +2494,7 @@ IL_02bc:
 		return;
 	}
 }
-// Method Definition Index: 108156
+// Method Definition Index: 108158
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR List_1_t77B94703E05C519A9010DD0614F757F974E1CD8B* LegoBrick_DetectStudPositionsFromMesh_mE821CE5CE52ABD468CF27D76211362421E097FDB (LegoBrick_tE5ABB25DF4A24103654F0463991511F18320BF2C* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3289,7 +3303,7 @@ IL_03c9:
 		return L_174;
 	}
 }
-// Method Definition Index: 108157
+// Method Definition Index: 108159
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t LegoBrick_get_Width_mE28BFBD3BACC0A62ECB8E7CA1288A4AB5EC69536 (LegoBrick_tE5ABB25DF4A24103654F0463991511F18320BF2C* __this, const RuntimeMethod* method) 
 {
 	{
@@ -3298,7 +3312,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t LegoBrick_get_Width_mE28BFBD3BACC0A62
 		return L_0;
 	}
 }
-// Method Definition Index: 108158
+// Method Definition Index: 108160
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t LegoBrick_get_Length_mCBD7DF6D6FD71100EB82A7497684C6E7089D21DD (LegoBrick_tE5ABB25DF4A24103654F0463991511F18320BF2C* __this, const RuntimeMethod* method) 
 {
 	{
@@ -3307,7 +3321,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t LegoBrick_get_Length_mCBD7DF6D6FD7110
 		return L_0;
 	}
 }
-// Method Definition Index: 108159
+// Method Definition Index: 108161
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool LegoBrick_get_IsBeingHeld_mA415DF077B69D7EF23261F8F81797F5E08DFE2A5 (LegoBrick_tE5ABB25DF4A24103654F0463991511F18320BF2C* __this, const RuntimeMethod* method) 
 {
 	{
@@ -3316,7 +3330,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool LegoBrick_get_IsBeingHeld_mA415DF077B69D
 		return L_0;
 	}
 }
-// Method Definition Index: 108160
+// Method Definition Index: 108162
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LegoBrick_set_IsBeingHeld_mC00502C70E628FAE0FB65C8044E990D9296F92FF (LegoBrick_tE5ABB25DF4A24103654F0463991511F18320BF2C* __this, bool ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -3326,7 +3340,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LegoBrick_set_IsBeingHeld_mC00502C70E628
 		return;
 	}
 }
-// Method Definition Index: 108161
+// Method Definition Index: 108163
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Rigidbody_t268697F5A994213ED97393309870968BC1C7393C* LegoBrick_get_Rb_m35FD29FA59949B08C556F125EA40E999496B9240 (LegoBrick_tE5ABB25DF4A24103654F0463991511F18320BF2C* __this, const RuntimeMethod* method) 
 {
 	{
@@ -3335,7 +3349,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Rigidbody_t268697F5A994213ED97393309870968BC1
 		return L_0;
 	}
 }
-// Method Definition Index: 108162
+// Method Definition Index: 108164
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR List_1_tA777F989D02310E2030B4BB8E11C15656AA720ED* LegoBrick_get_PotentialConnections_mB4C792DCB888405C90F100A8344729101400B1B4 (LegoBrick_tE5ABB25DF4A24103654F0463991511F18320BF2C* __this, const RuntimeMethod* method) 
 {
 	{
@@ -3344,7 +3358,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR List_1_tA777F989D02310E2030B4BB8E11C15656AA72
 		return L_0;
 	}
 }
-// Method Definition Index: 108163
+// Method Definition Index: 108165
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LegoBrick_OnGrabbed_mBB35582862D3BD765EAADB49FF43C4197AAB5DD5 (LegoBrick_tE5ABB25DF4A24103654F0463991511F18320BF2C* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3381,7 +3395,7 @@ IL_0021:
 		return;
 	}
 }
-// Method Definition Index: 108164
+// Method Definition Index: 108166
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LegoBrick_OnReleased_mC16F2ABA6B63DD83F39B79451ECD9FB0C4E4A37C (LegoBrick_tE5ABB25DF4A24103654F0463991511F18320BF2C* __this, const RuntimeMethod* method) 
 {
 	{
@@ -3393,7 +3407,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LegoBrick_OnReleased_mC16F2ABA6B63DD83F3
 		return;
 	}
 }
-// Method Definition Index: 108165
+// Method Definition Index: 108167
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LegoBrick_DisconnectAll_mD2960188FAA6C63EB811E4B78D3518DC4A8DF091 (LegoBrick_tE5ABB25DF4A24103654F0463991511F18320BF2C* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3547,7 +3561,7 @@ IL_0092:
 		return;
 	}
 }
-// Method Definition Index: 108166
+// Method Definition Index: 108168
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LegoBrick_TrySnapToNearby_mEEB0918DF2E35B7B57A8529E109D299A28F19D0F (LegoBrick_tE5ABB25DF4A24103654F0463991511F18320BF2C* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3835,7 +3849,7 @@ IL_0105:
 		return;
 	}
 }
-// Method Definition Index: 108167
+// Method Definition Index: 108169
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LegoBrick_PerformSnap_mE5EDEE30AC0B304A5B5C9116527017530681D676 (LegoBrick_tE5ABB25DF4A24103654F0463991511F18320BF2C* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4400,7 +4414,7 @@ IL_0296:
 		return;
 	}
 }
-// Method Definition Index: 108168
+// Method Definition Index: 108170
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LegoBrick__ctor_mFF306AA1D476DB1027B225B19F04FC75C36F2FFE (LegoBrick_tE5ABB25DF4A24103654F0463991511F18320BF2C* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4444,7 +4458,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LegoBrick__ctor_mFF306AA1D476DB1027B225B
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 108169
+// Method Definition Index: 108171
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LegoBrickDimensionValidator_ValidateBrickDimensions_m58E22F6825F4DF4DA24620BE7EC0A2F2B9AD84D4 (LegoBrickDimensionValidator_t626D022ED52E544FC9D118FED70DE9CD1E23F622* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4760,7 +4774,7 @@ IL_0222:
 		return;
 	}
 }
-// Method Definition Index: 108170
+// Method Definition Index: 108172
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool LegoBrickDimensionValidator_TryGetCombinedMeshBounds_m54E80D62113175BEC5A6B68A88BADC344ADB3DAB (LegoBrickDimensionValidator_t626D022ED52E544FC9D118FED70DE9CD1E23F622* __this, Bounds_t367E830C64BBF235ED8C3B2F8CF6254FDCAD39C3* ___0_combined, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4982,7 +4996,7 @@ IL_00bf:
 		return L_45;
 	}
 }
-// Method Definition Index: 108171
+// Method Definition Index: 108173
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LegoBrickDimensionValidator__ctor_m820B9F14F2AE7312F8DDEC28A0F642621B07AD6D (LegoBrickDimensionValidator_t626D022ED52E544FC9D118FED70DE9CD1E23F622* __this, const RuntimeMethod* method) 
 {
 	{
@@ -4998,7 +5012,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LegoBrickDimensionValidator__ctor_m820B9
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 108172
+// Method Definition Index: 108174
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LegoDimensionCalculator_CalculateDimensions_m69644336A6C0845A250937F9C193721B78F5F01C (LegoDimensionCalculator_tDB63B34206295692CC199C169BDEDF6B1C5E9940* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5184,7 +5198,7 @@ IL_0143:
 		return;
 	}
 }
-// Method Definition Index: 108173
+// Method Definition Index: 108175
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool LegoDimensionCalculator_ValidateTransforms_m1A39FA2053798A56979D6DC692056CCE68BD03C2 (LegoDimensionCalculator_tDB63B34206295692CC199C169BDEDF6B1C5E9940* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5252,7 +5266,7 @@ IL_0044:
 		return (bool)1;
 	}
 }
-// Method Definition Index: 108174
+// Method Definition Index: 108176
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LegoDimensionCalculator_OnDrawGizmos_mBD0504BAF2484FC5030E8A3A1D22AC2B22F8BA56 (LegoDimensionCalculator_tDB63B34206295692CC199C169BDEDF6B1C5E9940* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5357,7 +5371,7 @@ IL_0039:
 		return;
 	}
 }
-// Method Definition Index: 108175
+// Method Definition Index: 108177
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LegoDimensionCalculator__ctor_mDBB83FDA482D6867781B5A5BEB0AB9859F4281DD (LegoDimensionCalculator_tDB63B34206295692CC199C169BDEDF6B1C5E9940* __this, const RuntimeMethod* method) 
 {
 	{
@@ -5373,7 +5387,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LegoDimensionCalculator__ctor_mDBB83FDA4
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 108176
+// Method Definition Index: 108178
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LegoSnapManager_Awake_mCFF0745272132CCBF01B172D0924EB026E08B624 (LegoSnapManager_t14A4D59E5EAE6C2D1B12875A83052D257F4D9CA5* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5429,7 +5443,7 @@ IL_002d:
 		return;
 	}
 }
-// Method Definition Index: 108177
+// Method Definition Index: 108179
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LegoSnapManager_RegisterBrick_m89CC1D9CC04757DF7C4FA95CC719286E37DF8629 (LegoSnapManager_t14A4D59E5EAE6C2D1B12875A83052D257F4D9CA5* __this, LegoBrick_tE5ABB25DF4A24103654F0463991511F18320BF2C* ___0_brick, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5483,7 +5497,7 @@ IL_0024:
 		return;
 	}
 }
-// Method Definition Index: 108178
+// Method Definition Index: 108180
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR List_1_tA777F989D02310E2030B4BB8E11C15656AA720ED* LegoSnapManager_FindNearbySnapPoints_mCA11FB1C6C80210FF5E133B7C5AAEF88FF6B307F (LegoSnapManager_t14A4D59E5EAE6C2D1B12875A83052D257F4D9CA5* __this, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___0_position, float ___1_radius, int32_t ___2_type, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5713,7 +5727,7 @@ IL_00b5:
 		return L_29;
 	}
 }
-// Method Definition Index: 108179
+// Method Definition Index: 108181
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LegoSnapManager_LogConnection_m31707A7C3915C18C06B06B02335CAEB666EFBBE8 (LegoSnapManager_t14A4D59E5EAE6C2D1B12875A83052D257F4D9CA5* __this, LegoSnapPoint_t8A4EB093A2F6CA45BEE6EA97AA35CE9A374348DA* ___0_stud, LegoSnapPoint_t8A4EB093A2F6CA45BEE6EA97AA35CE9A374348DA* ___1_socket, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5840,7 +5854,7 @@ IL_0054:
 		return;
 	}
 }
-// Method Definition Index: 108180
+// Method Definition Index: 108182
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LegoSnapManager__ctor_mCFCB1F8D89167FB8A8A1FE6DC404352F53862819 (LegoSnapManager_t14A4D59E5EAE6C2D1B12875A83052D257F4D9CA5* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5875,7 +5889,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LegoSnapManager__ctor_mCFCB1F8D89167FB8A
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 108181
+// Method Definition Index: 108183
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ConnectionLog__ctor_m35E79D8FD93AF114BE352320EF1CB9B9788A3D7A (ConnectionLog_t427A141AB209C2B6E1CD79F9C38FB585FA592BA2* __this, const RuntimeMethod* method) 
 {
 	{
@@ -5891,7 +5905,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ConnectionLog__ctor_m35E79D8FD93AF114BE3
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 108182
+// Method Definition Index: 108184
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LegoSnapPoint_OnDrawGizmos_mCC448B449FDFB2F13841A3EEA4EE16E1644EC01E (LegoSnapPoint_t8A4EB093A2F6CA45BEE6EA97AA35CE9A374348DA* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5988,7 +6002,7 @@ IL_006d:
 		return;
 	}
 }
-// Method Definition Index: 108183
+// Method Definition Index: 108185
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LegoSnapPoint__ctor_m8BA9066FE62C7FC668FC1350D80AFA0B5B156C20 (LegoSnapPoint_t8A4EB093A2F6CA45BEE6EA97AA35CE9A374348DA* __this, const RuntimeMethod* method) 
 {
 	{
@@ -6012,7 +6026,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LegoSnapPoint__ctor_m8BA9066FE62C7FC668F
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 108184
+// Method Definition Index: 108186
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LegoXRGrabbable_Awake_m9DC298A597E17DA7A5946ACA4D2248438EEA394C (LegoXRGrabbable_t31D4B0712514535A9F2A3874B6BC8BE5B52DB6B9* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6062,7 +6076,7 @@ IL_002f:
 		return;
 	}
 }
-// Method Definition Index: 108185
+// Method Definition Index: 108187
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LegoXRGrabbable_OnEnable_m0DDCC2E8C3F169A92C836131C743DB40251D90E1 (LegoXRGrabbable_t31D4B0712514535A9F2A3874B6BC8BE5B52DB6B9* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6115,7 +6129,7 @@ IL_0046:
 		return;
 	}
 }
-// Method Definition Index: 108186
+// Method Definition Index: 108188
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LegoXRGrabbable_OnDisable_m08FF546070FB8479933102CF7D50A92B1DC5DF32 (LegoXRGrabbable_t31D4B0712514535A9F2A3874B6BC8BE5B52DB6B9* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6168,7 +6182,7 @@ IL_0046:
 		return;
 	}
 }
-// Method Definition Index: 108187
+// Method Definition Index: 108189
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LegoXRGrabbable_OnSelectEntered_m46AB3D5CEDB7598AD534B8B20C7655A720040386 (LegoXRGrabbable_t31D4B0712514535A9F2A3874B6BC8BE5B52DB6B9* __this, SelectEnterEventArgs_t9220B1E6A9BB5A847C0476949ACE0182430BB938* ___0_args, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6201,7 +6215,7 @@ IL_0019:
 		return;
 	}
 }
-// Method Definition Index: 108188
+// Method Definition Index: 108190
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LegoXRGrabbable_OnSelectExited_m7838BAF1C6A07D050C0FF91C7E2C398FD4E10AF7 (LegoXRGrabbable_t31D4B0712514535A9F2A3874B6BC8BE5B52DB6B9* __this, SelectExitEventArgs_t56125CE0360D37AC0B50EB6066B5AB5957EF559A* ___0_args, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6234,7 +6248,7 @@ IL_0019:
 		return;
 	}
 }
-// Method Definition Index: 108189
+// Method Definition Index: 108191
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LegoXRGrabbable__ctor_m0B709F199A76E283A2EACDC3AA4ABDEB47FBD463 (LegoXRGrabbable_t31D4B0712514535A9F2A3874B6BC8BE5B52DB6B9* __this, const RuntimeMethod* method) 
 {
 	{
@@ -6250,7 +6264,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LegoXRGrabbable__ctor_m0B709F199A76E283A
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 108190
+// Method Definition Index: 108192
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LegoSnapSystem_Start_m06208A92EC73F1885FAB6459AB80CFF7AA37C1B2 (LegoSnapSystem_tC8AC84D2F0003D236FFA759EC32F0A0077F6FB85* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6313,7 +6327,7 @@ IL_004c:
 		return;
 	}
 }
-// Method Definition Index: 108191
+// Method Definition Index: 108193
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LegoSnapSystem_Update_m4C48A4EB60AAE029A11DFD300684882BC8BC246B (LegoSnapSystem_tC8AC84D2F0003D236FFA759EC32F0A0077F6FB85* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6366,7 +6380,7 @@ IL_0036:
 		return;
 	}
 }
-// Method Definition Index: 108192
+// Method Definition Index: 108194
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LegoSnapSystem_TrySnap_mC0EE3300D5668FF91E11797922207336A3522529 (LegoSnapSystem_tC8AC84D2F0003D236FFA759EC32F0A0077F6FB85* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6601,12 +6615,14 @@ IL_00e2:
 		return;
 	}
 }
-// Method Definition Index: 108193
+// Method Definition Index: 108195
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LegoSnapSystem_SnapTo_m28DE84D38A45D2BD0C6575D730CD6B9726752DDC (LegoSnapSystem_tC8AC84D2F0003D236FFA759EC32F0A0077F6FB85* __this, Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___0_socket, Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___1_stud, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Array_IndexOf_TisTransform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1_m74EBADD5099D7B71BCA3A62C3D97ED3158C87A08_RuntimeMethod_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Component_GetComponentInParent_TisLegoSnapSystem_tC8AC84D2F0003D236FFA759EC32F0A0077F6FB85_mC00ACB5FC5661A227F492C6F4953CA8358A33F1D_RuntimeMethod_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Component_GetComponentInParent_TisRigidbody_t268697F5A994213ED97393309870968BC1C7393C_m49365CF93735FBE624C3828C66E7AD5FF67AD40D_RuntimeMethod_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&GameObject_AddComponent_TisFixedJoint_tA10A077292A86BA2A2AB3542E3441610055F806E_m55087CF9E0B9B9026B0844811592B36880109159_RuntimeMethod_var);
@@ -6618,135 +6634,231 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LegoSnapSystem_SnapTo_m28DE84D38A45D2BD0
 	memset((&V_0), 0, sizeof(V_0));
 	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 V_1;
 	memset((&V_1), 0, sizeof(V_1));
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 V_2;
+	memset((&V_2), 0, sizeof(V_2));
+	float V_3 = 0.0f;
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 V_4;
+	memset((&V_4), 0, sizeof(V_4));
 	{
 		//<source_info:/Users/noahsabbavarapu/lego/ITB/Assets/Scripts/SNAP.cs:89>
-		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_0 = ___0_socket;
-		NullCheck(L_0);
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_1;
-		L_1 = Transform_get_position_m69CD5FA214FDAE7BB701552943674846C220FDE1(L_0, NULL);
-		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_2 = ___1_stud;
-		NullCheck(L_2);
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_3;
-		L_3 = Transform_get_position_m69CD5FA214FDAE7BB701552943674846C220FDE1(L_2, NULL);
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_4;
-		L_4 = Vector3_op_Subtraction_mE42023FF80067CB44A1D4A27EB7CF2B24CABB828_inline(L_1, L_3, NULL);
-		V_0 = L_4;
+		TransformU5BU5D_tBB9C5F5686CAE82E3D97D43DF0F3D68ABF75EC24* L_0 = __this->___sockets;
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_1 = ___0_socket;
+		int32_t L_2;
+		L_2 = Array_IndexOf_TisTransform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1_m74EBADD5099D7B71BCA3A62C3D97ED3158C87A08(L_0, L_1, Array_IndexOf_TisTransform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1_m74EBADD5099D7B71BCA3A62C3D97ED3158C87A08_RuntimeMethod_var);
 		//<source_info:/Users/noahsabbavarapu/lego/ITB/Assets/Scripts/SNAP.cs:92>
-		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_5;
-		L_5 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(__this, NULL);
-		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_6 = L_5;
-		NullCheck(L_6);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_3 = ___1_stud;
+		NullCheck(L_3);
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_4;
+		L_4 = Transform_get_position_m69CD5FA214FDAE7BB701552943674846C220FDE1(L_3, NULL);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_5 = ___0_socket;
+		NullCheck(L_5);
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_6;
+		L_6 = Transform_get_position_m69CD5FA214FDAE7BB701552943674846C220FDE1(L_5, NULL);
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_7;
-		L_7 = Transform_get_position_m69CD5FA214FDAE7BB701552943674846C220FDE1(L_6, NULL);
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_8 = V_0;
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_9;
-		L_9 = Vector3_op_Subtraction_mE42023FF80067CB44A1D4A27EB7CF2B24CABB828_inline(L_7, L_8, NULL);
-		NullCheck(L_6);
-		Transform_set_position_mA1A817124BB41B685043DED2A9BA48CDF37C4156(L_6, L_9, NULL);
+		L_7 = Vector3_op_Subtraction_mE42023FF80067CB44A1D4A27EB7CF2B24CABB828_inline(L_4, L_6, NULL);
+		V_0 = L_7;
 		//<source_info:/Users/noahsabbavarapu/lego/ITB/Assets/Scripts/SNAP.cs:95>
-		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_10;
-		L_10 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(__this, NULL);
-		NullCheck(L_10);
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_11;
-		L_11 = Transform_get_eulerAngles_mCAAF48EFCF628F1ED91C2FFE75A4FD19C039DD6A(L_10, NULL);
-		V_1 = L_11;
-		//<source_info:/Users/noahsabbavarapu/lego/ITB/Assets/Scripts/SNAP.cs:96>
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_12 = V_1;
-		float L_13 = L_12.___y;
-		float L_14;
-		L_14 = bankers_roundf(((float)(L_13/(90.0f))));
-		(&V_1)->___y = ((float)il2cpp_codegen_multiply(L_14, (90.0f)));
-		//<source_info:/Users/noahsabbavarapu/lego/ITB/Assets/Scripts/SNAP.cs:97>
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_8;
+		L_8 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(__this, NULL);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_9 = L_8;
+		NullCheck(L_9);
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_10;
+		L_10 = Transform_get_position_m69CD5FA214FDAE7BB701552943674846C220FDE1(L_9, NULL);
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_11 = V_0;
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_12;
+		L_12 = Vector3_op_Addition_m78C0EC70CB66E8DCAC225743D82B268DAEE92067_inline(L_10, L_11, NULL);
+		NullCheck(L_9);
+		Transform_set_position_mA1A817124BB41B685043DED2A9BA48CDF37C4156(L_9, L_12, NULL);
+		//<source_info:/Users/noahsabbavarapu/lego/ITB/Assets/Scripts/SNAP.cs:98>
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_13 = ___1_stud;
+		NullCheck(L_13);
+		LegoSnapSystem_tC8AC84D2F0003D236FFA759EC32F0A0077F6FB85* L_14;
+		L_14 = Component_GetComponentInParent_TisLegoSnapSystem_tC8AC84D2F0003D236FFA759EC32F0A0077F6FB85_mC00ACB5FC5661A227F492C6F4953CA8358A33F1D(L_13, Component_GetComponentInParent_TisLegoSnapSystem_tC8AC84D2F0003D236FFA759EC32F0A0077F6FB85_mC00ACB5FC5661A227F492C6F4953CA8358A33F1D_RuntimeMethod_var);
+		NullCheck(L_14);
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_15;
-		L_15 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(__this, NULL);
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_16 = V_1;
+		L_15 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(L_14, NULL);
 		NullCheck(L_15);
-		Transform_set_eulerAngles_m9F0BC484A7915A51FAB87230644229B75BACA004(L_15, L_16, NULL);
-		//<source_info:/Users/noahsabbavarapu/lego/ITB/Assets/Scripts/SNAP.cs:100>
-		FixedJoint_tA10A077292A86BA2A2AB3542E3441610055F806E* L_17 = __this->___snapJoint;
-		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
-		bool L_18;
-		L_18 = Object_op_Equality_mB6120F782D83091EF56A198FCEBCF066DB4A9605(L_17, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
-		if (!L_18)
-		{
-			goto IL_008f;
-		}
-	}
-	{
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_16;
+		L_16 = Transform_get_eulerAngles_mCAAF48EFCF628F1ED91C2FFE75A4FD19C039DD6A(L_15, NULL);
+		V_1 = L_16;
+		//<source_info:/Users/noahsabbavarapu/lego/ITB/Assets/Scripts/SNAP.cs:99>
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_17;
+		L_17 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(__this, NULL);
+		NullCheck(L_17);
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_18;
+		L_18 = Transform_get_eulerAngles_mCAAF48EFCF628F1ED91C2FFE75A4FD19C039DD6A(L_17, NULL);
+		V_2 = L_18;
 		//<source_info:/Users/noahsabbavarapu/lego/ITB/Assets/Scripts/SNAP.cs:102>
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_19;
-		L_19 = Component_get_gameObject_m57AEFBB14DB39EC476F740BA000E170355DE691B(__this, NULL);
-		NullCheck(L_19);
-		FixedJoint_tA10A077292A86BA2A2AB3542E3441610055F806E* L_20;
-		L_20 = GameObject_AddComponent_TisFixedJoint_tA10A077292A86BA2A2AB3542E3441610055F806E_m55087CF9E0B9B9026B0844811592B36880109159(L_19, GameObject_AddComponent_TisFixedJoint_tA10A077292A86BA2A2AB3542E3441610055F806E_m55087CF9E0B9B9026B0844811592B36880109159_RuntimeMethod_var);
-		__this->___snapJoint = L_20;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->___snapJoint), (void*)L_20);
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_19 = V_1;
+		float L_20 = L_19.___y;
+		float L_21;
+		L_21 = bankers_roundf(((float)(L_20/(90.0f))));
+		(&V_2)->___y = ((float)il2cpp_codegen_multiply(L_21, (90.0f)));
 		//<source_info:/Users/noahsabbavarapu/lego/ITB/Assets/Scripts/SNAP.cs:103>
-		FixedJoint_tA10A077292A86BA2A2AB3542E3441610055F806E* L_21 = __this->___snapJoint;
-		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_22 = ___1_stud;
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_22;
+		L_22 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(__this, NULL);
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_23 = V_2;
 		NullCheck(L_22);
-		Rigidbody_t268697F5A994213ED97393309870968BC1C7393C* L_23;
-		L_23 = Component_GetComponentInParent_TisRigidbody_t268697F5A994213ED97393309870968BC1C7393C_m49365CF93735FBE624C3828C66E7AD5FF67AD40D(L_22, Component_GetComponentInParent_TisRigidbody_t268697F5A994213ED97393309870968BC1C7393C_m49365CF93735FBE624C3828C66E7AD5FF67AD40D_RuntimeMethod_var);
-		NullCheck(L_21);
-		Joint_set_connectedBody_mE9E631476E9D4264E8DC0D6307146F5EB64D3ED4(L_21, L_23, NULL);
-	}
-
-IL_008f:
-	{
+		Transform_set_eulerAngles_m9F0BC484A7915A51FAB87230644229B75BACA004(L_22, L_23, NULL);
 		//<source_info:/Users/noahsabbavarapu/lego/ITB/Assets/Scripts/SNAP.cs:106>
-		__this->___isSnapped = (bool)1;
+		V_3 = (0.00800000038f);
+		//<source_info:/Users/noahsabbavarapu/lego/ITB/Assets/Scripts/SNAP.cs:107>
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_24;
+		L_24 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(__this, NULL);
+		NullCheck(L_24);
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_25;
+		L_25 = Transform_get_position_m69CD5FA214FDAE7BB701552943674846C220FDE1(L_24, NULL);
+		V_4 = L_25;
+		//<source_info:/Users/noahsabbavarapu/lego/ITB/Assets/Scripts/SNAP.cs:108>
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_26 = V_4;
+		float L_27 = L_26.___x;
+		float L_28 = V_3;
+		float L_29;
+		L_29 = bankers_roundf(((float)(L_27/L_28)));
+		float L_30 = V_3;
+		(&V_4)->___x = ((float)il2cpp_codegen_multiply(L_29, L_30));
 		//<source_info:/Users/noahsabbavarapu/lego/ITB/Assets/Scripts/SNAP.cs:109>
-		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_24 = __this->___audioSource;
-		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
-		bool L_25;
-		L_25 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_24, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
-		if (!L_25)
-		{
-			goto IL_00c3;
-		}
-	}
-	{
-		AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20* L_26 = __this->___snapSound;
-		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
-		bool L_27;
-		L_27 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_26, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
-		if (!L_27)
-		{
-			goto IL_00c3;
-		}
-	}
-	{
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_31 = V_4;
+		float L_32 = L_31.___y;
+		float L_33 = V_3;
+		float L_34;
+		L_34 = bankers_roundf(((float)(L_32/L_33)));
+		float L_35 = V_3;
+		(&V_4)->___y = ((float)il2cpp_codegen_multiply(L_34, L_35));
+		//<source_info:/Users/noahsabbavarapu/lego/ITB/Assets/Scripts/SNAP.cs:110>
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_36 = V_4;
+		float L_37 = L_36.___z;
+		float L_38 = V_3;
+		float L_39;
+		L_39 = bankers_roundf(((float)(L_37/L_38)));
+		float L_40 = V_3;
+		(&V_4)->___z = ((float)il2cpp_codegen_multiply(L_39, L_40));
 		//<source_info:/Users/noahsabbavarapu/lego/ITB/Assets/Scripts/SNAP.cs:111>
-		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_28 = __this->___audioSource;
-		AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20* L_29 = __this->___snapSound;
-		NullCheck(L_28);
-		AudioSource_PlayOneShot_m098BCAE084AABB128BB19ED805D2D985E7B75112(L_28, L_29, NULL);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_41;
+		L_41 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(__this, NULL);
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_42 = V_4;
+		NullCheck(L_41);
+		Transform_set_position_mA1A817124BB41B685043DED2A9BA48CDF37C4156(L_41, L_42, NULL);
+		//<source_info:/Users/noahsabbavarapu/lego/ITB/Assets/Scripts/SNAP.cs:114>
+		Rigidbody_t268697F5A994213ED97393309870968BC1C7393C* L_43 = __this->___rb;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_44;
+		L_44 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_43, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_44)
+		{
+			goto IL_011c;
+		}
+	}
+	{
+		//<source_info:/Users/noahsabbavarapu/lego/ITB/Assets/Scripts/SNAP.cs:116>
+		Rigidbody_t268697F5A994213ED97393309870968BC1C7393C* L_45 = __this->___rb;
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_46;
+		L_46 = Vector3_get_zero_m0C1249C3F25B1C70EAD3CC8B31259975A457AE39_inline(NULL);
+		NullCheck(L_45);
+		Rigidbody_set_linearVelocity_m29AE03D5FC079EAD4202FCF72E2AEBDC19363985(L_45, L_46, NULL);
+		//<source_info:/Users/noahsabbavarapu/lego/ITB/Assets/Scripts/SNAP.cs:117>
+		Rigidbody_t268697F5A994213ED97393309870968BC1C7393C* L_47 = __this->___rb;
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_48;
+		L_48 = Vector3_get_zero_m0C1249C3F25B1C70EAD3CC8B31259975A457AE39_inline(NULL);
+		NullCheck(L_47);
+		Rigidbody_set_angularVelocity_m23266B4E52BF0D2E65CC984AC73CC40B8D4A27E0(L_47, L_48, NULL);
+		//<source_info:/Users/noahsabbavarapu/lego/ITB/Assets/Scripts/SNAP.cs:118>
+		Rigidbody_t268697F5A994213ED97393309870968BC1C7393C* L_49 = __this->___rb;
+		NullCheck(L_49);
+		Rigidbody_set_isKinematic_m6C3FD3EA358DADA3B191F2449CF1C4F8B22695ED(L_49, (bool)1, NULL);
 	}
 
-IL_00c3:
+IL_011c:
 	{
-		//<source_info:/Users/noahsabbavarapu/lego/ITB/Assets/Scripts/SNAP.cs:114>
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_30;
-		L_30 = Component_get_gameObject_m57AEFBB14DB39EC476F740BA000E170355DE691B(__this, NULL);
-		NullCheck(L_30);
-		String_t* L_31;
-		L_31 = Object_get_name_mAC2F6B897CF1303BA4249B4CB55271AFACBB6392(L_30, NULL);
-		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_32 = ___1_stud;
-		NullCheck(L_32);
-		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_33;
-		L_33 = Transform_get_parent_m65354E28A4C94EC00EBCF03532F7B0718380791E(L_32, NULL);
-		NullCheck(L_33);
-		String_t* L_34;
-		L_34 = Object_get_name_mAC2F6B897CF1303BA4249B4CB55271AFACBB6392(L_33, NULL);
-		String_t* L_35;
-		L_35 = String_Concat_m8855A6DE10F84DA7F4EC113CADDB59873A25573B(L_31, _stringLiteral014A1F8CB2E749FCDD271796FAA823E0B0A5AC00, L_34, NULL);
+		//<source_info:/Users/noahsabbavarapu/lego/ITB/Assets/Scripts/SNAP.cs:122>
+		FixedJoint_tA10A077292A86BA2A2AB3542E3441610055F806E* L_50 = __this->___snapJoint;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_51;
+		L_51 = Object_op_Equality_mB6120F782D83091EF56A198FCEBCF066DB4A9605(L_50, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_51)
+		{
+			goto IL_015c;
+		}
+	}
+	{
+		//<source_info:/Users/noahsabbavarapu/lego/ITB/Assets/Scripts/SNAP.cs:124>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_52;
+		L_52 = Component_get_gameObject_m57AEFBB14DB39EC476F740BA000E170355DE691B(__this, NULL);
+		NullCheck(L_52);
+		FixedJoint_tA10A077292A86BA2A2AB3542E3441610055F806E* L_53;
+		L_53 = GameObject_AddComponent_TisFixedJoint_tA10A077292A86BA2A2AB3542E3441610055F806E_m55087CF9E0B9B9026B0844811592B36880109159(L_52, GameObject_AddComponent_TisFixedJoint_tA10A077292A86BA2A2AB3542E3441610055F806E_m55087CF9E0B9B9026B0844811592B36880109159_RuntimeMethod_var);
+		__this->___snapJoint = L_53;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___snapJoint), (void*)L_53);
+		//<source_info:/Users/noahsabbavarapu/lego/ITB/Assets/Scripts/SNAP.cs:125>
+		FixedJoint_tA10A077292A86BA2A2AB3542E3441610055F806E* L_54 = __this->___snapJoint;
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_55 = ___1_stud;
+		NullCheck(L_55);
+		Rigidbody_t268697F5A994213ED97393309870968BC1C7393C* L_56;
+		L_56 = Component_GetComponentInParent_TisRigidbody_t268697F5A994213ED97393309870968BC1C7393C_m49365CF93735FBE624C3828C66E7AD5FF67AD40D(L_55, Component_GetComponentInParent_TisRigidbody_t268697F5A994213ED97393309870968BC1C7393C_m49365CF93735FBE624C3828C66E7AD5FF67AD40D_RuntimeMethod_var);
+		NullCheck(L_54);
+		Joint_set_connectedBody_mE9E631476E9D4264E8DC0D6307146F5EB64D3ED4(L_54, L_56, NULL);
+		//<source_info:/Users/noahsabbavarapu/lego/ITB/Assets/Scripts/SNAP.cs:126>
+		FixedJoint_tA10A077292A86BA2A2AB3542E3441610055F806E* L_57 = __this->___snapJoint;
+		NullCheck(L_57);
+		Joint_set_breakForce_m42F130D31EFC282FE0887A4E6A399F53EB3FB40F(L_57, (std::numeric_limits<float>::infinity()), NULL);
+	}
+
+IL_015c:
+	{
+		//<source_info:/Users/noahsabbavarapu/lego/ITB/Assets/Scripts/SNAP.cs:129>
+		__this->___isSnapped = (bool)1;
+		//<source_info:/Users/noahsabbavarapu/lego/ITB/Assets/Scripts/SNAP.cs:131>
+		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_58 = __this->___audioSource;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_59;
+		L_59 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_58, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_59)
+		{
+			goto IL_0190;
+		}
+	}
+	{
+		AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20* L_60 = __this->___snapSound;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_61;
+		L_61 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_60, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_61)
+		{
+			goto IL_0190;
+		}
+	}
+	{
+		//<source_info:/Users/noahsabbavarapu/lego/ITB/Assets/Scripts/SNAP.cs:133>
+		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_62 = __this->___audioSource;
+		AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20* L_63 = __this->___snapSound;
+		NullCheck(L_62);
+		AudioSource_PlayOneShot_m098BCAE084AABB128BB19ED805D2D985E7B75112(L_62, L_63, NULL);
+	}
+
+IL_0190:
+	{
+		//<source_info:/Users/noahsabbavarapu/lego/ITB/Assets/Scripts/SNAP.cs:136>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_64;
+		L_64 = Component_get_gameObject_m57AEFBB14DB39EC476F740BA000E170355DE691B(__this, NULL);
+		NullCheck(L_64);
+		String_t* L_65;
+		L_65 = Object_get_name_mAC2F6B897CF1303BA4249B4CB55271AFACBB6392(L_64, NULL);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_66 = ___1_stud;
+		NullCheck(L_66);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_67;
+		L_67 = Transform_get_parent_m65354E28A4C94EC00EBCF03532F7B0718380791E(L_66, NULL);
+		NullCheck(L_67);
+		String_t* L_68;
+		L_68 = Object_get_name_mAC2F6B897CF1303BA4249B4CB55271AFACBB6392(L_67, NULL);
+		String_t* L_69;
+		L_69 = String_Concat_m8855A6DE10F84DA7F4EC113CADDB59873A25573B(L_65, _stringLiteral014A1F8CB2E749FCDD271796FAA823E0B0A5AC00, L_68, NULL);
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
-		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(L_35, NULL);
-		//<source_info:/Users/noahsabbavarapu/lego/ITB/Assets/Scripts/SNAP.cs:115>
+		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(L_69, NULL);
+		//<source_info:/Users/noahsabbavarapu/lego/ITB/Assets/Scripts/SNAP.cs:137>
 		return;
 	}
 }
-// Method Definition Index: 108194
+// Method Definition Index: 108196
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR TransformU5BU5D_tBB9C5F5686CAE82E3D97D43DF0F3D68ABF75EC24* LegoSnapSystem_FindChildrenByName_mA430388E5D9276056A452E5EFF68699C4157983F (LegoSnapSystem_tC8AC84D2F0003D236FFA759EC32F0A0077F6FB85* __this, String_t* ___0_namePattern, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6764,14 +6876,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR TransformU5BU5D_tBB9C5F5686CAE82E3D97D43DF0F3
 	int32_t V_2 = 0;
 	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* V_3 = NULL;
 	{
-		//<source_info:/Users/noahsabbavarapu/lego/ITB/Assets/Scripts/SNAP.cs:120>
+		//<source_info:/Users/noahsabbavarapu/lego/ITB/Assets/Scripts/SNAP.cs:142>
 		TransformU5BU5D_tBB9C5F5686CAE82E3D97D43DF0F3D68ABF75EC24* L_0;
 		L_0 = Component_GetComponentsInChildren_TisTransform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1_m75FFF26FD3F8B797CFE939FBA50E014C15E6BE28(__this, Component_GetComponentsInChildren_TisTransform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1_m75FFF26FD3F8B797CFE939FBA50E014C15E6BE28_RuntimeMethod_var);
-		//<source_info:/Users/noahsabbavarapu/lego/ITB/Assets/Scripts/SNAP.cs:121>
+		//<source_info:/Users/noahsabbavarapu/lego/ITB/Assets/Scripts/SNAP.cs:143>
 		List_1_t991BBC5A1D51F59A450367DF944DAA207F22D06D* L_1 = (List_1_t991BBC5A1D51F59A450367DF944DAA207F22D06D*)il2cpp_codegen_object_new(List_1_t991BBC5A1D51F59A450367DF944DAA207F22D06D_il2cpp_TypeInfo_var);
 		List_1__ctor_mDC3E95DC5C927A867B9B42EDE1945F909B894268(L_1, List_1__ctor_mDC3E95DC5C927A867B9B42EDE1945F909B894268_RuntimeMethod_var);
 		V_0 = L_1;
-		//<source_info:/Users/noahsabbavarapu/lego/ITB/Assets/Scripts/SNAP.cs:123>
+		//<source_info:/Users/noahsabbavarapu/lego/ITB/Assets/Scripts/SNAP.cs:145>
 		V_1 = L_0;
 		V_2 = 0;
 		goto IL_0038;
@@ -6779,14 +6891,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR TransformU5BU5D_tBB9C5F5686CAE82E3D97D43DF0F3
 
 IL_0011:
 	{
-		//<source_info:/Users/noahsabbavarapu/lego/ITB/Assets/Scripts/SNAP.cs:123>
+		//<source_info:/Users/noahsabbavarapu/lego/ITB/Assets/Scripts/SNAP.cs:145>
 		TransformU5BU5D_tBB9C5F5686CAE82E3D97D43DF0F3D68ABF75EC24* L_2 = V_1;
 		int32_t L_3 = V_2;
 		NullCheck(L_2);
 		int32_t L_4 = L_3;
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_5 = (L_2)->GetAt(static_cast<il2cpp_array_size_t>(L_4));
 		V_3 = L_5;
-		//<source_info:/Users/noahsabbavarapu/lego/ITB/Assets/Scripts/SNAP.cs:125>
+		//<source_info:/Users/noahsabbavarapu/lego/ITB/Assets/Scripts/SNAP.cs:147>
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_6 = V_3;
 		NullCheck(L_6);
 		String_t* L_7;
@@ -6807,7 +6919,7 @@ IL_0011:
 		}
 	}
 	{
-		//<source_info:/Users/noahsabbavarapu/lego/ITB/Assets/Scripts/SNAP.cs:127>
+		//<source_info:/Users/noahsabbavarapu/lego/ITB/Assets/Scripts/SNAP.cs:149>
 		List_1_t991BBC5A1D51F59A450367DF944DAA207F22D06D* L_12 = V_0;
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_13 = V_3;
 		NullCheck(L_12);
@@ -6822,7 +6934,7 @@ IL_0034:
 
 IL_0038:
 	{
-		//<source_info:/Users/noahsabbavarapu/lego/ITB/Assets/Scripts/SNAP.cs:123>
+		//<source_info:/Users/noahsabbavarapu/lego/ITB/Assets/Scripts/SNAP.cs:145>
 		int32_t L_15 = V_2;
 		TransformU5BU5D_tBB9C5F5686CAE82E3D97D43DF0F3D68ABF75EC24* L_16 = V_1;
 		NullCheck(L_16);
@@ -6832,7 +6944,7 @@ IL_0038:
 		}
 	}
 	{
-		//<source_info:/Users/noahsabbavarapu/lego/ITB/Assets/Scripts/SNAP.cs:131>
+		//<source_info:/Users/noahsabbavarapu/lego/ITB/Assets/Scripts/SNAP.cs:153>
 		List_1_t991BBC5A1D51F59A450367DF944DAA207F22D06D* L_17 = V_0;
 		NullCheck(L_17);
 		TransformU5BU5D_tBB9C5F5686CAE82E3D97D43DF0F3D68ABF75EC24* L_18;
@@ -6840,7 +6952,7 @@ IL_0038:
 		return L_18;
 	}
 }
-// Method Definition Index: 108195
+// Method Definition Index: 108197
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LegoSnapSystem_Unsnap_mA484574D87ECAF69C7B1705E2C60E2BB42C2059F (LegoSnapSystem_tC8AC84D2F0003D236FFA759EC32F0A0077F6FB85* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6850,7 +6962,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LegoSnapSystem_Unsnap_mA484574D87ECAF69C
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:/Users/noahsabbavarapu/lego/ITB/Assets/Scripts/SNAP.cs:137>
+		//<source_info:/Users/noahsabbavarapu/lego/ITB/Assets/Scripts/SNAP.cs:159>
 		FixedJoint_tA10A077292A86BA2A2AB3542E3441610055F806E* L_0 = __this->___snapJoint;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -6861,7 +6973,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LegoSnapSystem_Unsnap_mA484574D87ECAF69C
 		}
 	}
 	{
-		//<source_info:/Users/noahsabbavarapu/lego/ITB/Assets/Scripts/SNAP.cs:139>
+		//<source_info:/Users/noahsabbavarapu/lego/ITB/Assets/Scripts/SNAP.cs:161>
 		FixedJoint_tA10A077292A86BA2A2AB3542E3441610055F806E* L_2 = __this->___snapJoint;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		Object_Destroy_mE97D0A766419A81296E8D4E5C23D01D3FE91ACBB(L_2, NULL);
@@ -6869,13 +6981,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LegoSnapSystem_Unsnap_mA484574D87ECAF69C
 
 IL_0019:
 	{
-		//<source_info:/Users/noahsabbavarapu/lego/ITB/Assets/Scripts/SNAP.cs:141>
+		//<source_info:/Users/noahsabbavarapu/lego/ITB/Assets/Scripts/SNAP.cs:163>
 		__this->___isSnapped = (bool)0;
-		//<source_info:/Users/noahsabbavarapu/lego/ITB/Assets/Scripts/SNAP.cs:142>
+		//<source_info:/Users/noahsabbavarapu/lego/ITB/Assets/Scripts/SNAP.cs:164>
 		return;
 	}
 }
-// Method Definition Index: 108196
+// Method Definition Index: 108198
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LegoSnapSystem__ctor_m144A914DEEF0EAF62780F28C617EA5F3B3BEA47D (LegoSnapSystem_tC8AC84D2F0003D236FFA759EC32F0A0077F6FB85* __this, const RuntimeMethod* method) 
 {
 	{
@@ -6895,7 +7007,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LegoSnapSystem__ctor_m144A914DEEF0EAF627
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 108197
+// Method Definition Index: 108199
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR MonoScriptData_t8F50E352855B96FFFC1D9CB07EACC90C99D73A3E UnitySourceGeneratedAssemblyMonoScriptTypes_v1_Get_mBEB95BEB954BB63E9710BBC7AD5E78C4CB0A0033 (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6929,7 +7041,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR MonoScriptData_t8F50E352855B96FFFC1D9CB07EACC
 		return L_6;
 	}
 }
-// Method Definition Index: 108198
+// Method Definition Index: 108200
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UnitySourceGeneratedAssemblyMonoScriptTypes_v1__ctor_mE70FB23ACC1EA12ABC948AA22C2E78B2D0AA39B1 (UnitySourceGeneratedAssemblyMonoScriptTypes_v1_tC95F24D0C6E6B77389433852BB389F39C692926E* __this, const RuntimeMethod* method) 
 {
 	{
@@ -7282,7 +7394,7 @@ IL_0040:
 		return L_19;
 	}
 }
-// Method Definition Index: 108157
+// Method Definition Index: 108159
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t LegoBrick_get_Width_mE28BFBD3BACC0A62ECB8E7CA1288A4AB5EC69536_inline (LegoBrick_tE5ABB25DF4A24103654F0463991511F18320BF2C* __this, const RuntimeMethod* method) 
 {
 	{
@@ -7291,7 +7403,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t LegoBrick_get_Width_mE28B
 		return L_0;
 	}
 }
-// Method Definition Index: 108158
+// Method Definition Index: 108160
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t LegoBrick_get_Length_mCBD7DF6D6FD71100EB82A7497684C6E7089D21DD_inline (LegoBrick_tE5ABB25DF4A24103654F0463991511F18320BF2C* __this, const RuntimeMethod* method) 
 {
 	{
