@@ -157,7 +157,7 @@ public class LegoBrick : MonoBehaviour
             studSnapPoints.Add(studPoint);
 
             // SOCKET (bottom) - positioned at half height lower than studs
-            Vector3 sockLocalPos = new Vector3(studLocalPos.x, 0f, studLocalPos.z);
+            Vector3 sockLocalPos = new Vector3(studLocalPos.x, studLocalPos.y - height, studLocalPos.z);
             GameObject sockObj = Instantiate(snapPointPrefab, transform);
             sockObj.name = $"Socket_{i}";
             sockObj.transform.localPosition = sockLocalPos;

@@ -44,15 +44,15 @@ public class LegoSnapPoint : MonoBehaviour
 
     // Distance between stud centers: 0.8m (scaled from real LEGO 8mm for comfortable VR interaction)
     /// <summary>
-    /// Spacing between studs in (units used by the project). Default suggested value: 0.8.
+    /// Spacing between studs in meters (units used by the project). Default suggested value: 0.8.
     /// </summary>
     public const float STUD_SPACING = 0.8f;
 
-    // Snap detection radius: 0.35m (half-stud distance, also equals edge margin for natural snapping)
+    // Snap detection radius: 0.8m (detection radius for snapping)
     /// <summary>
-    /// Radius within which snapping should occur. Default suggested value: 0.35.
+    /// Radius within which snapping should occur. Default suggested value: 0.8.
     /// </summary>
-    public const float SNAP_RADIUS = 0.35f;
+    public const float SNAP_RADIUS = 0.05f;
 
     /// <summary>
     /// Draw debug gizmos in the Scene view to visualize snap points and connections.
