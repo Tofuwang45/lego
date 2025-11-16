@@ -14,7 +14,7 @@ public class APICallInstruction : MonoBehaviour
     private string apiKey = "";
 
     [Header("AI Prompt Settings")]
-    [SerializeField] private string systemPrompt = "You are a helpful assistant tasked with decoding a set of actions into insturctions. Given a set of actions detailing what parts are connected to what, you will detail how to assemble the parts step by step. For example, given actions (\'Lego 2x2 -> Lego 4x2\'), you will respond with instructions like \'1. Attach a Lego 2x2 on top of a Lego 4x2.\' Ensure clarity and conciseness in your instructions.";
+    [SerializeField] private string systemPrompt = "You are a helpful assistant tasked with decoding a set of actions into insturctions. Given a set of actions detailing what parts are connected to what, you will detail how to assemble the parts step by step. For example, given actions (\'pink_block -> light_red_block\') and a corresponding coordinate pair, you will respond with instructions like \'1. Attach a pink block to the right of a light red block.\' Ensure clarity and conciseness in your instructions.";
     
     [Header("Text Input")]
     [SerializeField] private TextMeshProUGUI inputTextObject;
