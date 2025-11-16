@@ -7611,10 +7611,10 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LegoSnapPerfect_TrySnap_mDF7ACD446AACEA5
 		TransformU5BU5D_tBB9C5F5686CAE82E3D97D43DF0F3D68ABF75EC24* L_2 = __this->___sockets;
 		V_4 = L_2;
 		V_5 = 0;
-		goto IL_00a4;
+		goto IL_0098;
 	}
 
-IL_0021:
+IL_001e:
 	{
 		//<source_info:/Users/noahsabbavarapu/lego/ITB/Assets/Scripts/SNAP.cs:55>
 		TransformU5BU5D_tBB9C5F5686CAE82E3D97D43DF0F3D68ABF75EC24* L_3 = V_4;
@@ -7627,10 +7627,10 @@ IL_0021:
 		LegoSnapPerfectU5BU5D_tCF20FA1E969EB78AE9CB0145924336F53876F0AD* L_7 = V_0;
 		V_7 = L_7;
 		V_8 = 0;
-		goto IL_0096;
+		goto IL_008a;
 	}
 
-IL_0030:
+IL_002d:
 	{
 		//<source_info:/Users/noahsabbavarapu/lego/ITB/Assets/Scripts/SNAP.cs:57>
 		LegoSnapPerfectU5BU5D_tCF20FA1E969EB78AE9CB0145924336F53876F0AD* L_8 = V_7;
@@ -7646,149 +7646,140 @@ IL_0030:
 		L_13 = Object_op_Equality_mB6120F782D83091EF56A198FCEBCF066DB4A9605(L_12, __this, NULL);
 		if (L_13)
 		{
-			goto IL_0090;
+			goto IL_0084;
 		}
 	}
 	{
+		//<source_info:/Users/noahsabbavarapu/lego/ITB/Assets/Scripts/SNAP.cs:61>
 		LegoSnapPerfect_tCBCD2A33E1B79F0039871C80303C91D50107FCA1* L_14 = V_9;
 		NullCheck(L_14);
-		bool L_15 = L_14->___isSnapped;
-		if (L_15)
-		{
-			goto IL_0090;
-		}
-	}
-	{
-		//<source_info:/Users/noahsabbavarapu/lego/ITB/Assets/Scripts/SNAP.cs:61>
-		LegoSnapPerfect_tCBCD2A33E1B79F0039871C80303C91D50107FCA1* L_16 = V_9;
-		NullCheck(L_16);
-		TransformU5BU5D_tBB9C5F5686CAE82E3D97D43DF0F3D68ABF75EC24* L_17 = L_16->___studs;
-		V_10 = L_17;
+		TransformU5BU5D_tBB9C5F5686CAE82E3D97D43DF0F3D68ABF75EC24* L_15 = L_14->___studs;
+		V_10 = L_15;
 		V_11 = 0;
-		goto IL_0088;
+		goto IL_007c;
 	}
 
-IL_0058:
+IL_004c:
 	{
 		//<source_info:/Users/noahsabbavarapu/lego/ITB/Assets/Scripts/SNAP.cs:61>
-		TransformU5BU5D_tBB9C5F5686CAE82E3D97D43DF0F3D68ABF75EC24* L_18 = V_10;
-		int32_t L_19 = V_11;
-		NullCheck(L_18);
-		int32_t L_20 = L_19;
-		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_21 = (L_18)->GetAt(static_cast<il2cpp_array_size_t>(L_20));
-		V_12 = L_21;
+		TransformU5BU5D_tBB9C5F5686CAE82E3D97D43DF0F3D68ABF75EC24* L_16 = V_10;
+		int32_t L_17 = V_11;
+		NullCheck(L_16);
+		int32_t L_18 = L_17;
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_19 = (L_16)->GetAt(static_cast<il2cpp_array_size_t>(L_18));
+		V_12 = L_19;
 		//<source_info:/Users/noahsabbavarapu/lego/ITB/Assets/Scripts/SNAP.cs:63>
-		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_22 = V_6;
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_20 = V_6;
+		NullCheck(L_20);
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_21;
+		L_21 = Transform_get_position_m69CD5FA214FDAE7BB701552943674846C220FDE1(L_20, NULL);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_22 = V_12;
 		NullCheck(L_22);
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_23;
 		L_23 = Transform_get_position_m69CD5FA214FDAE7BB701552943674846C220FDE1(L_22, NULL);
-		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_24 = V_12;
-		NullCheck(L_24);
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_25;
-		L_25 = Transform_get_position_m69CD5FA214FDAE7BB701552943674846C220FDE1(L_24, NULL);
-		float L_26;
-		L_26 = Vector3_Distance_m2314DB9B8BD01157E013DF87BEA557375C7F9FF9_inline(L_23, L_25, NULL);
-		V_13 = L_26;
+		float L_24;
+		L_24 = Vector3_Distance_m2314DB9B8BD01157E013DF87BEA557375C7F9FF9_inline(L_21, L_23, NULL);
+		V_13 = L_24;
 		//<source_info:/Users/noahsabbavarapu/lego/ITB/Assets/Scripts/SNAP.cs:65>
-		float L_27 = V_13;
-		float L_28 = V_3;
-		if ((!(((float)L_27) < ((float)L_28))))
+		float L_25 = V_13;
+		float L_26 = V_3;
+		if ((!(((float)L_25) < ((float)L_26))))
 		{
-			goto IL_0082;
+			goto IL_0076;
 		}
 	}
 	{
 		//<source_info:/Users/noahsabbavarapu/lego/ITB/Assets/Scripts/SNAP.cs:67>
-		float L_29 = V_13;
-		V_3 = L_29;
+		float L_27 = V_13;
+		V_3 = L_27;
 		//<source_info:/Users/noahsabbavarapu/lego/ITB/Assets/Scripts/SNAP.cs:68>
-		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_30 = V_6;
-		V_1 = L_30;
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_28 = V_6;
+		V_1 = L_28;
 		//<source_info:/Users/noahsabbavarapu/lego/ITB/Assets/Scripts/SNAP.cs:69>
-		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_31 = V_12;
-		V_2 = L_31;
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_29 = V_12;
+		V_2 = L_29;
 	}
 
-IL_0082:
+IL_0076:
 	{
-		int32_t L_32 = V_11;
-		V_11 = ((int32_t)il2cpp_codegen_add(L_32, 1));
+		int32_t L_30 = V_11;
+		V_11 = ((int32_t)il2cpp_codegen_add(L_30, 1));
 	}
 
-IL_0088:
+IL_007c:
 	{
 		//<source_info:/Users/noahsabbavarapu/lego/ITB/Assets/Scripts/SNAP.cs:61>
-		int32_t L_33 = V_11;
-		TransformU5BU5D_tBB9C5F5686CAE82E3D97D43DF0F3D68ABF75EC24* L_34 = V_10;
-		NullCheck(L_34);
-		if ((((int32_t)L_33) < ((int32_t)((int32_t)(((RuntimeArray*)L_34)->max_length)))))
+		int32_t L_31 = V_11;
+		TransformU5BU5D_tBB9C5F5686CAE82E3D97D43DF0F3D68ABF75EC24* L_32 = V_10;
+		NullCheck(L_32);
+		if ((((int32_t)L_31) < ((int32_t)((int32_t)(((RuntimeArray*)L_32)->max_length)))))
 		{
-			goto IL_0058;
+			goto IL_004c;
 		}
 	}
 
-IL_0090:
+IL_0084:
 	{
-		int32_t L_35 = V_8;
-		V_8 = ((int32_t)il2cpp_codegen_add(L_35, 1));
+		int32_t L_33 = V_8;
+		V_8 = ((int32_t)il2cpp_codegen_add(L_33, 1));
 	}
 
-IL_0096:
+IL_008a:
 	{
 		//<source_info:/Users/noahsabbavarapu/lego/ITB/Assets/Scripts/SNAP.cs:57>
-		int32_t L_36 = V_8;
-		LegoSnapPerfectU5BU5D_tCF20FA1E969EB78AE9CB0145924336F53876F0AD* L_37 = V_7;
-		NullCheck(L_37);
-		if ((((int32_t)L_36) < ((int32_t)((int32_t)(((RuntimeArray*)L_37)->max_length)))))
+		int32_t L_34 = V_8;
+		LegoSnapPerfectU5BU5D_tCF20FA1E969EB78AE9CB0145924336F53876F0AD* L_35 = V_7;
+		NullCheck(L_35);
+		if ((((int32_t)L_34) < ((int32_t)((int32_t)(((RuntimeArray*)L_35)->max_length)))))
 		{
-			goto IL_0030;
+			goto IL_002d;
 		}
 	}
 	{
-		int32_t L_38 = V_5;
-		V_5 = ((int32_t)il2cpp_codegen_add(L_38, 1));
+		int32_t L_36 = V_5;
+		V_5 = ((int32_t)il2cpp_codegen_add(L_36, 1));
 	}
 
-IL_00a4:
+IL_0098:
 	{
 		//<source_info:/Users/noahsabbavarapu/lego/ITB/Assets/Scripts/SNAP.cs:55>
-		int32_t L_39 = V_5;
-		TransformU5BU5D_tBB9C5F5686CAE82E3D97D43DF0F3D68ABF75EC24* L_40 = V_4;
-		NullCheck(L_40);
-		if ((((int32_t)L_39) < ((int32_t)((int32_t)(((RuntimeArray*)L_40)->max_length)))))
+		int32_t L_37 = V_5;
+		TransformU5BU5D_tBB9C5F5686CAE82E3D97D43DF0F3D68ABF75EC24* L_38 = V_4;
+		NullCheck(L_38);
+		if ((((int32_t)L_37) < ((int32_t)((int32_t)(((RuntimeArray*)L_38)->max_length)))))
 		{
-			goto IL_0021;
+			goto IL_001e;
 		}
 	}
 	{
 		//<source_info:/Users/noahsabbavarapu/lego/ITB/Assets/Scripts/SNAP.cs:75>
-		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_41 = V_2;
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_39 = V_2;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_40;
+		L_40 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_39, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_40)
+		{
+			goto IL_00bd;
+		}
+	}
+	{
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_41 = V_1;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_42;
 		L_42 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_41, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
 		if (!L_42)
 		{
-			goto IL_00c9;
-		}
-	}
-	{
-		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_43 = V_1;
-		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
-		bool L_44;
-		L_44 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_43, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
-		if (!L_44)
-		{
-			goto IL_00c9;
+			goto IL_00bd;
 		}
 	}
 	{
 		//<source_info:/Users/noahsabbavarapu/lego/ITB/Assets/Scripts/SNAP.cs:77>
-		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_45 = V_1;
-		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_46 = V_2;
-		LegoSnapPerfect_SnapToPerfect_m2D199855F723989C706FD409ADD7CA64FCF8ADFC(__this, L_45, L_46, NULL);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_43 = V_1;
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_44 = V_2;
+		LegoSnapPerfect_SnapToPerfect_m2D199855F723989C706FD409ADD7CA64FCF8ADFC(__this, L_43, L_44, NULL);
 	}
 
-IL_00c9:
+IL_00bd:
 	{
 		//<source_info:/Users/noahsabbavarapu/lego/ITB/Assets/Scripts/SNAP.cs:79>
 		return;
