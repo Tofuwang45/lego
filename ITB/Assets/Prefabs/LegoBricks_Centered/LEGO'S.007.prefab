@@ -40,7 +40,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8392237795161058653}
-  m_Mesh: {fileID: -282526311972151781, guid: 7ef96c16966e74614b728a59f2bee2ce, type: 3}
+  m_Mesh: {fileID: -282526311972151781, guid: a2556ff875339114693109f63158b831, type: 3}
 --- !u!23 &6696877839005435750
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -66,7 +66,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -2505642851634945670, guid: 7ef96c16966e74614b728a59f2bee2ce, type: 3}
+  - {fileID: -2505642851634945670, guid: a2556ff875339114693109f63158b831, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -120,7 +120,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3722714317007552087}
@@ -148,7 +148,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
@@ -188,8 +188,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LegoBrick
   width: 2
   length: 1
-  height: 0.2
-  snapPointPrefab: {fileID: 0}
+  height: 0.8
+  snapPointPrefab: {fileID: 4659689169280398010, guid: 97acaec772e382e47800e16e84555c6a, type: 3}
   studSnapPoints: []
   socketSnapPoints: []
   snapSound: {fileID: 0}
@@ -207,7 +207,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit::UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable
   m_InteractionManager: {fileID: 0}
-  m_Colliders: []
+  m_Colliders:
+  - {fileID: 8502729137963109080}
   m_InteractionLayers:
     m_Bits: 1
   m_DistanceCalculationMode: 1
@@ -275,7 +276,7 @@ MonoBehaviour:
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
   m_MovementType: 2
-  m_PredictedVisualsTransform: {fileID: 3722714317007552087}
+  m_PredictedVisualsTransform: {fileID: 0}
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1
