@@ -40,16 +40,58 @@ namespace MRTemplateAssets.Scripts
         public void Initialize(BlockData data)
         {
             blockData = data;
+            
+            Debug.Log($"[BlockButton] Initialize called for: {data.blockName}");
+            
+            // Log RectTransform info
+            RectTransform rectTransform = GetComponent<RectTransform>();
+            if (rectTransform != null)
+            {
+                Debug.Log($"[BlockButton] RectTransform - Position: {rectTransform.localPosition}, Size: {rectTransform.sizeDelta}");
+                Debug.Log($"[BlockButton] RectTransform - Anchors: Min{rectTransform.anchorMin}, Max{rectTransform.anchorMax}");
+                Debug.Log($"[BlockButton] RectTransform - Parent: {(rectTransform.parent != null ? rectTransform.parent.name : "NULL")}");
+            }
+            else
+            {
+                Debug.LogError("[BlockButton] RectTransform component NOT found!");
+            }
+            
+            // Log visibility
+            CanvasGroup canvasGroup = GetComponent<CanvasGroup>();
+            if (canvasGroup != null)
+            {
+                Debug.Log($"[BlockButton] CanvasGroup - Alpha: {canvasGroup.alpha}, BlocksRaycasts: {canvasGroup.blocksRaycasts}");
+            }
+            
+            Image image = GetComponent<Image>();
+            if (image != null)
+            {
+                Debug.Log($"[BlockButton] Image - Enabled: {image.enabled}, Color: {image.color}, RaycastTarget: {image.raycastTarget}");
+            }
+            else
+            {
+                Debug.LogWarning("[BlockButton] Image component NOT found!");
+            }
 
             // Set up UI
             if (iconImage != null && data.icon != null)
             {
                 iconImage.sprite = data.icon;
+                Debug.Log($"[BlockButton] Set icon sprite");
+            }
+            else if (iconImage == null)
+            {
+                Debug.LogWarning("[BlockButton] iconImage reference is NULL!");
             }
 
             if (nameLabel != null)
             {
                 nameLabel.text = data.blockName;
+                Debug.Log($"[BlockButton] Set name label to: {data.blockName}");
+            }
+            else
+            {
+                Debug.LogWarning("[BlockButton] nameLabel reference is NULL!");
             }
 
             // Create color selection dots
@@ -59,7 +101,14 @@ namespace MRTemplateAssets.Scripts
             if (data.availableColors.Count > 0)
             {
                 selectedColor = data.availableColors[0];
+                Debug.Log($"[BlockButton] Set default color");
             }
+            else
+            {
+                Debug.LogWarning($"[BlockButton] No available colors for {data.blockName}!");
+            }
+            
+            Debug.Log($"[BlockButton] Initialization complete for: {data.blockName}");
         }
 
         private void CreateColorDots()
