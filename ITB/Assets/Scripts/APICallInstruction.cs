@@ -94,6 +94,7 @@ public class APICallInstruction : MonoBehaviour
             return;
         }
 
+        Debug.Log("[API CALL] Calling API with user message: " + userMessage);
         StartCoroutine(SendAPIRequest(userMessage));
     }
 
@@ -161,18 +162,20 @@ public class APICallInstruction : MonoBehaviour
                 response.candidates[0].content.parts.Length > 0)
             {
                 lastResponse = response.candidates[0].content.parts[0].text;
-                Debug.Log("AI Response: " + lastResponse);
+                Debug.Log("[API OUTPUT] AI Response: " + lastResponse);
                 
                 // Display output if output text object is assigned
                 if (outputTextObject != null)
                 {
                     outputTextObject.text = lastResponse;
+                    Debug.Log("[API OUTPUT] Response displayed in UI");
                 }
                 
                 // Auto-save output if enabled
                 if (autoSaveOutput)
                 {
                     SaveOutputToFile(lastResponse);
+                    Debug.Log("[API OUTPUT] Response auto-saved to file");
                 }
             }
         }
