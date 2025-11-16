@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
 namespace MRTemplateAssets.Scripts
 {
@@ -25,16 +24,12 @@ namespace MRTemplateAssets.Scripts
         public int columns = 3;
 
         private BlockCatalogData catalogData;
-        private XRRayInteractor rayInteractor;
-        private NearFarInteractor nearFarInteractor;
         private List<BlockButton> currentButtons = new List<BlockButton>();
         private BlockCategory currentCategory;
 
-        public void Initialize(BlockCatalogData catalog, XRRayInteractor rayInt = null, NearFarInteractor nearFarInt = null)
+        public void Initialize(BlockCatalogData catalog)
         {
             catalogData = catalog;
-            rayInteractor = rayInt;
-            nearFarInteractor = nearFarInt;
 
             // Ensure grid layout group is configured
             var gridLayout = gridContainer.GetComponent<GridLayoutGroup>();
@@ -82,7 +77,7 @@ namespace MRTemplateAssets.Scripts
 
             if (blockButton != null)
             {
-                blockButton.Initialize(blockData, rayInteractor, nearFarInteractor);
+                blockButton.Initialize(blockData);
                 currentButtons.Add(blockButton);
             }
         }

@@ -51,13 +51,22 @@ namespace MRTemplateAssets.Scripts
         {
             if (placedObject == null) return;
 
+            // Store the color before recording
+            Color objectColor = Color.white;
+            Renderer renderer = placedObject.GetComponent<Renderer>();
+            if (renderer != null && renderer.material != null)
+            {
+                objectColor = renderer.material.color;
+            }
+
             UndoAction action = new UndoAction
             {
                 type = UndoAction.ActionType.Placement,
                 targetObject = placedObject,
                 position = placedObject.transform.position,
                 rotation = placedObject.transform.rotation,
-                scale = placedObject.transform.localScale
+                scale = placedObject.transform.localScale,
+                objectColor = objectColor
             };
 
             PushAction(action);

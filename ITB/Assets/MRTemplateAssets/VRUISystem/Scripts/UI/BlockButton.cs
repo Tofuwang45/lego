@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
-using UnityEngine.XR.Interaction.Toolkit.Interactors;
+using UnityEngine.XR.Interaction.Toolkit.UI;
 using TMPro;
 
 namespace MRTemplateAssets.Scripts
@@ -28,20 +28,18 @@ namespace MRTemplateAssets.Scripts
         public float ghostDistance = 0.3f;
 
         private BlockData blockData;
-        private XRRayInteractor rayInteractor;
-        private NearFarInteractor nearFarInteractor;
         private GameObject ghostPreview;
         private Color selectedColor = Color.red;
         private bool isHovering = false;
+        private Vector3 lastHitPosition = Vector3.zero;
+        private Vector3 lastHitNormal = Vector3.up;
 
         /// <summary>
         /// Initialize the button with block data
         /// </summary>
-        public void Initialize(BlockData data, XRRayInteractor rayInt = null, NearFarInteractor nearFarInt = null)
+        public void Initialize(BlockData data)
         {
             blockData = data;
-            rayInteractor = rayInt;
-            nearFarInteractor = nearFarInt;
 
             // Set up UI
             if (iconImage != null && data.icon != null)
@@ -102,11 +100,22 @@ namespace MRTemplateAssets.Scripts
             {
                 UpdateGhostColor();
             }
+            
+            // Update position with stored hit info
+            if (isHovering)
+            {
+                UpdateGhostPosition(lastHitPosition, lastHitNormal);
+            }
         }
 
         public void OnPointerEnter(PointerEventData eventData)
         {
             isHovering = true;
+            // Store the hit information from event data
+            if (eventData.worldPosition != Vector3.zero)
+            {
+                lastHitPosition = eventData.worldPosition;
+            }
             ShowGhostPreview();
         }
 
@@ -118,16 +127,17 @@ namespace MRTemplateAssets.Scripts
 
         public void OnPointerClick(PointerEventData eventData)
         {
+            // Update hit position from the click event
+            if (eventData.worldPosition != Vector3.zero)
+            {
+                lastHitPosition = eventData.worldPosition;
+            }
             SpawnBlock();
         }
 
         private void Update()
         {
-            // Update ghost preview position while hovering
-            if (isHovering && ghostPreview != null && rayInteractor != null)
-            {
-                UpdateGhostPosition();
-            }
+            // Ghost preview position is updated via event data in OnPointerEnter
         }
 
         private void ShowGhostPreview()
@@ -179,36 +189,13 @@ namespace MRTemplateAssets.Scripts
             }
         }
 
-        private void UpdateGhostPosition()
+        private void UpdateGhostPosition(Vector3 hitPosition, Vector3 hitNormal)
         {
             if (ghostPreview == null) return;
 
-            // Try with NearFarInteractor first
-            if (nearFarInteractor != null)
-            {
-                // Position along forward direction at fixed distance
-                ghostPreview.transform.position = nearFarInteractor.transform.position +
-                                                  nearFarInteractor.transform.forward * 1.0f;
-                ghostPreview.transform.rotation = nearFarInteractor.transform.rotation;
-                return;
-            }
-
-            // Fallback to XRRayInteractor
-            if (rayInteractor != null)
-            {
-                RaycastHit hit;
-                if (rayInteractor.TryGetCurrent3DRaycastHit(out hit))
-                {
-                    ghostPreview.transform.position = hit.point + hit.normal * ghostDistance;
-                    ghostPreview.transform.rotation = Quaternion.LookRotation(hit.normal);
-                }
-                else
-                {
-                    Ray ray = new Ray(rayInteractor.transform.position, rayInteractor.transform.forward);
-                    ghostPreview.transform.position = ray.GetPoint(1.0f);
-                    ghostPreview.transform.rotation = rayInteractor.transform.rotation;
-                }
-            }
+            // Position ghost at the hit point with offset along the normal
+            ghostPreview.transform.position = hitPosition + hitNormal * ghostDistance;
+            ghostPreview.transform.rotation = Quaternion.LookRotation(hitNormal);
         }
 
         private void UpdateGhostColor()
@@ -235,25 +222,17 @@ namespace MRTemplateAssets.Scripts
             // Spawn the actual block
             GameObject spawnedBlock = Instantiate(blockData.prefab);
 
-            // Position it at the ghost location or ray hit point
+            // Position it at the ghost location
             if (ghostPreview != null)
             {
                 spawnedBlock.transform.position = ghostPreview.transform.position;
                 spawnedBlock.transform.rotation = ghostPreview.transform.rotation;
             }
-            else if (nearFarInteractor != null)
+            else
             {
-                spawnedBlock.transform.position = nearFarInteractor.transform.position +
-                                                  nearFarInteractor.transform.forward * 1.0f;
-                spawnedBlock.transform.rotation = nearFarInteractor.transform.rotation;
-            }
-            else if (rayInteractor != null)
-            {
-                RaycastHit hit;
-                if (rayInteractor.TryGetCurrent3DRaycastHit(out hit))
-                {
-                    spawnedBlock.transform.position = hit.point;
-                }
+                // Fallback to last known hit position
+                spawnedBlock.transform.position = lastHitPosition + lastHitNormal * ghostDistance;
+                spawnedBlock.transform.rotation = Quaternion.LookRotation(lastHitNormal);
             }
 
             // Apply selected color

@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
 namespace MRTemplateAssets.Scripts
 {
@@ -19,18 +18,12 @@ namespace MRTemplateAssets.Scripts
         [Tooltip("Maximum number of recent blocks to show")]
         public int maxRecents = 6;
 
-        [Header("Interaction")]
-        public XRRayInteractor rayInteractor;
-        public NearFarInteractor nearFarInteractor;
-
         private BlockCatalogData catalogData;
         private List<BlockButton> recentButtons = new List<BlockButton>();
 
-        public void Initialize(BlockCatalogData catalog, XRRayInteractor rayInt = null, NearFarInteractor nearFarInt = null)
+        public void Initialize(BlockCatalogData catalog)
         {
             catalogData = catalog;
-            rayInteractor = rayInt;
-            nearFarInteractor = nearFarInt;
 
             // Subscribe to usage tracker updates
             if (BlockUsageTracker.Instance != null)
@@ -74,7 +67,7 @@ namespace MRTemplateAssets.Scripts
 
             if (blockButton != null)
             {
-                blockButton.Initialize(blockData, rayInteractor, nearFarInteractor);
+                blockButton.Initialize(blockData);
                 recentButtons.Add(blockButton);
 
                 // Set the default color to the one used in this usage

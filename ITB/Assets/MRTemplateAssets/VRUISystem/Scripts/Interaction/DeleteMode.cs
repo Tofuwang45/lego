@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.XR.Interaction.Toolkit.Interactors;
 using UnityEngine.UI;
 
 namespace MRTemplateAssets.Scripts
@@ -13,11 +12,8 @@ namespace MRTemplateAssets.Scripts
         [Tooltip("Toggle button for delete mode")]
         public Toggle deleteModeToggle;
 
-        [Tooltip("Right hand ray interactor (XRRayInteractor or NearFarInteractor)")]
-        public XRRayInteractor rayInteractor;
-
-        [Tooltip("Right hand Near-Far interactor (alternative to Ray Interactor)")]
-        public NearFarInteractor nearFarInteractor;
+        [Tooltip("Transform to use as the raycast origin (e.g., controller or camera)")]
+        public Transform raycastOrigin;
 
         [Header("Visual Feedback")]
         [Tooltip("Color of the ray when in delete mode")]
@@ -40,6 +36,7 @@ namespace MRTemplateAssets.Scripts
         private GameObject highlightedObject;
         private Material originalMaterial;
         private Material highlightMaterial;
+        private bool isDeleteInputPressed = false;
 
         private void Awake()
         {
@@ -54,6 +51,12 @@ namespace MRTemplateAssets.Scripts
             highlightMaterial.EnableKeyword("_ALPHABLEND_ON");
             highlightMaterial.DisableKeyword("_ALPHAPREMULTIPLY_ON");
             highlightMaterial.renderQueue = 3000;
+
+            // Auto-find raycast origin if not assigned
+            if (raycastOrigin == null)
+            {
+                raycastOrigin = Camera.main?.transform;
+            }
         }
 
         private void Start()
@@ -76,10 +79,19 @@ namespace MRTemplateAssets.Scripts
             HighlightObjectUnderRay();
 
             // Handle delete input
-            if (IsDeleteInputPressed())
+            if (isDeleteInputPressed)
             {
                 DeleteHighlightedObject();
+                isDeleteInputPressed = false;
             }
+        }
+
+        /// <summary>
+        /// Call this method when delete input is detected (e.g., from a button or input event)
+        /// </summary>
+        public void OnDeleteInputPressed()
+        {
+            isDeleteInputPressed = true;
         }
 
         private void OnDeleteModeToggled(bool isActive)
@@ -109,37 +121,22 @@ namespace MRTemplateAssets.Scripts
 
         private void HighlightObjectUnderRay()
         {
-            // Try NearFarInteractor first
-            if (nearFarInteractor != null)
+            if (raycastOrigin == null)
             {
-                RaycastHit hit;
-                Ray ray = new Ray(nearFarInteractor.transform.position, nearFarInteractor.transform.forward);
-
-                if (Physics.Raycast(ray, out hit, maxDeleteDistance, deletableLayerMask))
-                {
-                    ProcessHighlight(hit);
-                }
-                else
-                {
-                    ClearHighlight();
-                }
+                Debug.LogWarning("DeleteMode: Raycast origin is not set!");
                 return;
             }
 
-            // Fallback to XRRayInteractor
-            if (rayInteractor != null)
-            {
-                RaycastHit hit;
-                Ray ray = new Ray(rayInteractor.transform.position, rayInteractor.transform.forward);
+            RaycastHit hit;
+            Ray ray = new Ray(raycastOrigin.position, raycastOrigin.forward);
 
-                if (Physics.Raycast(ray, out hit, maxDeleteDistance, deletableLayerMask))
-                {
-                    ProcessHighlight(hit);
-                }
-                else
-                {
-                    ClearHighlight();
-                }
+            if (Physics.Raycast(ray, out hit, maxDeleteDistance, deletableLayerMask))
+            {
+                ProcessHighlight(hit);
+            }
+            else
+            {
+                ClearHighlight();
             }
         }
 
@@ -181,26 +178,6 @@ namespace MRTemplateAssets.Scripts
                 highlightedObject = null;
                 originalMaterial = null;
             }
-        }
-
-        private bool IsDeleteInputPressed()
-        {
-            // Check for trigger press using XR Interaction Toolkit's input system
-            // Try NearFarInteractor first
-            if (nearFarInteractor != null)
-            {
-                float selectValue = nearFarInteractor.selectInput.ReadValue();
-                return selectValue > 0.5f;
-            }
-
-            // Fallback to XRRayInteractor
-            if (rayInteractor != null)
-            {
-                float selectValue = rayInteractor.selectInput.ReadValue();
-                return selectValue > 0.5f;
-            }
-
-            return false;
         }
 
         private void DeleteHighlightedObject()
