@@ -48,8 +48,10 @@ public class APICallInstruction : MonoBehaviour
 
         foreach (string path in possiblePaths)
         {
+            Debug.Log("[ENV] Checking path: " + path);
             if (File.Exists(path))
             {
+                Debug.Log("[ENV] File found at: " + path);
                 string[] lines = File.ReadAllLines(path);
                 foreach (string line in lines)
                 {
@@ -57,14 +59,19 @@ public class APICallInstruction : MonoBehaviour
                     if (line.StartsWith("GEMINI_API_KEY="))
                     {
                         apiKey = line.Replace("GEMINI_API_KEY=", "").Trim();
-                        Debug.Log("Gemini API Key loaded from .env file");
+                        Debug.Log("[ENV] Gemini API Key loaded successfully. Key starts with: " + apiKey.Substring(0, Math.Min(5, apiKey.Length)) + "...");
                         return;
                     }
                 }
+                Debug.LogWarning("[ENV] GEMINI_API_KEY not found in file at: " + path);
+            }
+            else
+            {
+                Debug.Log("[ENV] File not found at: " + path);
             }
         }
 
-        Debug.LogWarning("Could not find .env file or GEMINI_API_KEY not set!");
+        Debug.LogError("[ENV] Could not find .env file or GEMINI_API_KEY not set!");
     }
 
     public void CallAI()
