@@ -1325,6 +1325,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 229344686253980554, guid: a50fe9e0591af284984d082f9cd8f2b7, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 346654792417907792, guid: a50fe9e0591af284984d082f9cd8f2b7, type: 3}
       propertyPath: m_Name
       value: lego test 1
@@ -1409,7 +1413,8 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5843336677579969749, guid: a50fe9e0591af284984d082f9cd8f2b7, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 4911270888290480278, guid: a50fe9e0591af284984d082f9cd8f2b7, type: 3}
@@ -2500,6 +2505,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 229344686253980554, guid: a50fe9e0591af284984d082f9cd8f2b7, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 346654792417907792, guid: a50fe9e0591af284984d082f9cd8f2b7, type: 3}
       propertyPath: m_Name
       value: lego test 2
@@ -2584,7 +2593,8 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5843336677579969749, guid: a50fe9e0591af284984d082f9cd8f2b7, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 4911270888290480278, guid: a50fe9e0591af284984d082f9cd8f2b7, type: 3}
@@ -2633,10 +2643,9 @@ MonoBehaviour:
   - {fileID: 255757273}
   - {fileID: 211547740}
   snapDistance: 0.05
-  snapForce: 10
-  legoLayer:
-    serializedVersion: 2
-    m_Bits: 256
+  snapSpeed: 10
+  useGridSnapping: 1
+  gridSize: 0.008
   snapSound: {fileID: 0}
 --- !u!1001 &1364055689
 PrefabInstance:
@@ -3167,10 +3176,9 @@ MonoBehaviour:
   - {fileID: 872191766}
   - {fileID: 47707241}
   snapDistance: 0.05
-  snapForce: 10
-  legoLayer:
-    serializedVersion: 2
-    m_Bits: 257
+  snapSpeed: 10
+  useGridSnapping: 1
+  gridSize: 0.008
   snapSound: {fileID: 0}
 --- !u!1001 &1576591419
 PrefabInstance:

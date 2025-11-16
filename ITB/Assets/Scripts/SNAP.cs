@@ -1,15 +1,16 @@
 using UnityEngine;
 
-public class LegoSnapSystem : MonoBehaviour
+public class LegoSnapPerfect : MonoBehaviour
 {
     [Header("Snap Points")]
     public Transform[] studs;      // Top connection points
     public Transform[] sockets;    // Bottom connection points
     
     [Header("Snap Settings")]
-    public float snapDistance = 0.15f;
-    public float snapForce = 10f;
-    public LayerMask legoLayer;
+    public float snapDistance = 0.1f;
+    public float snapSpeed = 10f;
+    public bool useGridSnapping = true;
+    public float gridSize = 0.008f;  // LEGO standard unit
     
     [Header("Audio")]
     public AudioClip snapSound;
@@ -18,13 +19,14 @@ public class LegoSnapSystem : MonoBehaviour
     private AudioSource audioSource;
     private bool isSnapped = false;
     private FixedJoint snapJoint;
+    private Transform snappedToStud = null;
     
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         audioSource = GetComponent<AudioSource>();
         
-        // Find all studs and sockets if not manually assigned
+        // Auto-find studs and sockets
         if (studs.Length == 0)
         {
             studs = FindChildrenByName("stud");
@@ -37,7 +39,6 @@ public class LegoSnapSystem : MonoBehaviour
     
     void Update()
     {
-        // Only try to snap when moving slowly
         if (rb != null && rb.linearVelocity.magnitude < 0.5f && !isSnapped)
         {
             TrySnap();
@@ -46,17 +47,16 @@ public class LegoSnapSystem : MonoBehaviour
     
     void TrySnap()
     {
-        LegoSnapSystem[] allBricks = FindObjectsOfType<LegoSnapSystem>();
+        LegoSnapPerfect[] allBricks = FindObjectsOfType<LegoSnapPerfect>();
         Transform bestSocket = null;
         Transform bestStud = null;
         float closestDistance = snapDistance;
         
-        // Check each of our sockets against all other bricks' studs
         foreach (var socket in sockets)
         {
             foreach (var otherBrick in allBricks)
             {
-                if (otherBrick == this) continue;
+                if (otherBrick == this || otherBrick.isSnapped) continue;
                 
                 foreach (var stud in otherBrick.studs)
                 {
@@ -64,14 +64,9 @@ public class LegoSnapSystem : MonoBehaviour
                     
                     if (dist < closestDistance)
                     {
-                        // Check if alignment is good (not at weird angle)
-                        float angle = Vector3.Angle(socket.up, -stud.up);
-                        if (angle < 30f)
-                        {
-                            closestDistance = dist;
-                            bestSocket = socket;
-                            bestStud = stud;
-                        }
+                        closestDistance = dist;
+                        bestSocket = socket;
+                        bestStud = stud;
                     }
                 }
             }
@@ -79,64 +74,79 @@ public class LegoSnapSystem : MonoBehaviour
         
         if (bestStud != null && bestSocket != null)
         {
-            SnapTo(bestSocket, bestStud);
+            SnapToPerfect(bestSocket, bestStud);
         }
     }
     
-void SnapTo(Transform socket, Transform stud)
-{
-    // Find which socket is being used
-    int socketIndex = System.Array.IndexOf(sockets, socket);
-    
-    // Calculate the offset between our socket and their stud
-    Vector3 socketToStud = stud.position - socket.position;
-    
-    // Move the entire brick by this offset
-    transform.position += socketToStud;
-    
-    // Align rotation to match the other brick (both should be on same grid)
-    Vector3 targetRotation = stud.GetComponentInParent<LegoSnapSystem>().transform.eulerAngles;
-    Vector3 euler = transform.eulerAngles;
-    
-    // Snap to nearest 90-degree increment matching the target brick
-    euler.y = Mathf.Round(targetRotation.y / 90f) * 90f;
-    transform.eulerAngles = euler;
-    
-    // Fine-tune: Snap to grid for perfect alignment
-    float gridSize = 0.008f; // Standard LEGO unit
-    Vector3 pos = transform.position;
-    pos.x = Mathf.Round(pos.x / gridSize) * gridSize;
-    pos.y = Mathf.Round(pos.y / gridSize) * gridSize;
-    pos.z = Mathf.Round(pos.z / gridSize) * gridSize;
-    transform.position = pos;
-    
-    // Stop all movement
-    if (rb != null)
+    void SnapToPerfect(Transform socket, Transform stud)
     {
-        rb.linearVelocity = Vector3.zero;
-        rb.angularVelocity = Vector3.zero;
-        rb.isKinematic = true; // Lock it completely
+        // Get the brick we're snapping to
+        Transform targetBrick = stud.GetComponentInParent<LegoSnapPerfect>().transform;
+        
+        // STEP 1: Match rotation exactly to target brick
+        transform.rotation = targetBrick.rotation;
+        
+        // STEP 2: Calculate exact position offset
+        // We want our socket to be exactly where their stud is
+        Vector3 offsetFromSocketToOrigin = transform.position - socket.position;
+        Vector3 newPosition = stud.position + offsetFromSocketToOrigin;
+        
+        // STEP 3: Apply grid snapping for perfect alignment
+        if (useGridSnapping)
+        {
+            newPosition.x = Mathf.Round(newPosition.x / gridSize) * gridSize;
+            newPosition.y = Mathf.Round(newPosition.y / gridSize) * gridSize;
+            newPosition.z = Mathf.Round(newPosition.z / gridSize) * gridSize;
+        }
+        
+        transform.position = newPosition;
+        
+        // STEP 4: Lock the brick completely
+        if (rb != null)
+        {
+            rb.linearVelocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+            rb.isKinematic = true;
+        }
+        
+        // STEP 5: Create unbreakable connection
+        if (snapJoint == null)
+        {
+            snapJoint = gameObject.AddComponent<FixedJoint>();
+            snapJoint.connectedBody = targetBrick.GetComponent<Rigidbody>();
+            snapJoint.breakForce = Mathf.Infinity;
+            snapJoint.breakTorque = Mathf.Infinity;
+        }
+        
+        isSnapped = true;
+        snappedToStud = stud;
+        
+        // Play sound
+        if (audioSource != null && snapSound != null)
+        {
+            audioSource.PlayOneShot(snapSound);
+        }
+        
+        Debug.Log($"{gameObject.name} snapped perfectly to {targetBrick.name}");
     }
     
-    // Create physical connection
-    if (snapJoint == null)
+    // Call this when brick is grabbed/picked up
+    public void Unsnap()
     {
-        snapJoint = gameObject.AddComponent<FixedJoint>();
-        snapJoint.connectedBody = stud.GetComponentInParent<Rigidbody>();
-        snapJoint.breakForce = Mathf.Infinity;
+        if (snapJoint != null)
+        {
+            Destroy(snapJoint);
+        }
+        
+        if (rb != null)
+        {
+            rb.isKinematic = false;
+        }
+        
+        isSnapped = false;
+        snappedToStud = null;
     }
     
-    isSnapped = true;
-    
-    if (audioSource != null && snapSound != null)
-    {
-        audioSource.PlayOneShot(snapSound);
-    }
-    
-    Debug.Log($"{gameObject.name} snapped to {stud.parent.name}");
-}
-    
-    // Helper function to find children by name pattern
     Transform[] FindChildrenByName(string namePattern)
     {
         Transform[] allChildren = GetComponentsInChildren<Transform>();
@@ -153,16 +163,42 @@ void SnapTo(Transform socket, Transform stud)
         return matches.ToArray();
     }
     
-    // Call this to unsnap (e.g., when picked up)
-    public void Unsnap()
+    // Visualize snap points
+    void OnDrawGizmos()
     {
-        if (snapJoint != null)
+        if (studs != null)
         {
-            Destroy(snapJoint);
+            Gizmos.color = Color.green;
+            foreach (var stud in studs)
+            {
+                if (stud != null)
+                    Gizmos.DrawWireSphere(stud.position, 0.01f);
+            }
         }
-        isSnapped = false;
+        
+        if (sockets != null)
+        {
+            Gizmos.color = Color.red;
+            foreach (var socket in sockets)
+            {
+                if (socket != null)
+                    Gizmos.DrawWireSphere(socket.position, 0.01f);
+            }
+        }
     }
     
-    
-    
+    void OnDrawGizmosSelected()
+    {
+        if (sockets != null)
+        {
+            foreach (var socket in sockets)
+            {
+                if (socket != null)
+                {
+                    Gizmos.color = new Color(1, 1, 0, 0.3f);
+                    Gizmos.DrawWireSphere(socket.position, snapDistance);
+                }
+            }
+        }
+    }
 }
